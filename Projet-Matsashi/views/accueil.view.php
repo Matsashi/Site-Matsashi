@@ -1,33 +1,35 @@
 <?php ob_start();?>
 <section id="stream-biblio">
     <div id="stream-windows">
-        <!-- <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
-        <div id="twitch-embed"></div>
-        <script type="text/javascript">
-            new Twitch.Embed("twitch-embed",
-            {
-            width: 1281,
-            height: 430,
-            channel: "matsashi",
-            muted: "true",
-            layout: "video-with-chat",
-            theme: "dark",
-            });
-        </script> -->
-        <iframe 
-            src="https://player.twitch.tv/?channel=matsashi&parent=localhost"
-            frameborder="0"
-            allowfullscreen="true"
-            scrolling="no"
-            height="645"
-            width="1080">
-        </iframe>
-        <iframe
-            id="chat_embed"
-            src="https://www.twitch.tv/embed/matsashi/chat?parent=localhost"
-            height="645"
-            width="314">
-        </iframe>
+        <div class="first-element">
+            <!-- <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+            <div id="twitch-embed"></div>
+            <script type="text/javascript">
+                new Twitch.Embed("twitch-embed",
+                {
+                width: 1081,
+                height: 500,
+                channel: "matsashi",
+                muted: "true",
+                layout: "video-with-chat",
+                theme: "dark",
+                });
+            </script> -->
+            <iframe 
+                src="https://player.twitch.tv/?channel=matsashi&parent=localhost"
+                frameborder="0"
+                allowfullscreen="true"
+                scrolling="no"
+                height="500"
+                width="838">
+            </iframe>
+            <iframe
+                id="chat_embed"
+                src="https://www.twitch.tv/embed/matsashi/chat?parent=localhost"
+                height="500"
+                width="243">
+            </iframe>
+        </div>        
     </div>
     <h2 class="mb-5">Visiter la Bibliothèque</h2>
     <div class="mb-5">
@@ -107,7 +109,7 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-4"></div>
-            <a class="col-4 fs-3" id="button-biblio" href="<?=URL?>bibliotheque">Accéder à la Bibliothèque</a>
+            <a class="col-4 fs-3" id="button-biblio" href="<?=URL?>bibliotheque">Accéder à la bibliothèque</a>
             <div class="col-4"></div>
         </div>
     </div>
@@ -146,10 +148,10 @@
                 <h3 class="bio-text-left h3-bio mb-3">Partenaires de jeu</h3>
                 <p class="bio-text-left">Malgré le fait que je joue à énormément de jeux solo, j'aime également beaucoup jouer avec des amis. Que ce soit en coopération ou en compétition, le jeu à plusieurs est toujours source de plaisir mais aussi très souvent source de rage.</p>
                 <p class="bio-text-left">Mes partenaires de jeu principaux :
-                <br>- Nicohero (Twitch.tv/nicohero8)
+                <br>- Nicohero <a href="https://www.twitch.tv/nicohero8">(Twitch.tv/nicohero8)</a>
                 <br>- Karmatem
                 <br>- Asalyx
-                <br>- Bouyah (Twitch.tv/bouyah_kikiwi)</p>
+                <br>- Bouyah <a href="https://www.twitch.tv/bouyah_kikiwi">(Twitch.tv/bouyah_kikiwi)</a></p>
             </div>
             <div class="col-2">
             </div>
@@ -160,6 +162,5 @@
     </div>    
 </section>
 <?php
-// $titre = "Accueil";
 $content = ob_get_clean();
 require "template.php";

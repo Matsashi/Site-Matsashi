@@ -1,12 +1,16 @@
 <?php ob_start();?>
 <section id="constructor">
     <div class="container">
-        <div>
+        <div class="first-element">
             <form class="d-flex justify-content-center">
-                <input class="form-control" id="search-bar-game" type="search" placeholder="Rechercher votre jeu" name="search">
-                <button type="submit">
-                    <i class="fa fa-search" id="search-icon"></i>
-                </button>
+                <div class="input-group py-2"  id="search-form">
+                    <input class="form-control" type="text" placeholder="Rechercher votre jeu" id="search-bar-game">
+                    <span class="input-group-append">
+                        <button class="btn " type="button" id="search-icon">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
             </form>
         </div>
         <div class="row align-items-center mb-5">
@@ -22,7 +26,7 @@
                 </a>
             </div>
         </div>
-        <div class="row align-items-center mb-5">
+        <div class="row align-items-center">
             <div class="col-4">
                 <a href="<?=URL?>bibliotheque/sega">
                     <img src="<?=URL?>public/images/sega logo.png" width="75%">

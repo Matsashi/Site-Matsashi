@@ -15,34 +15,42 @@ try{
             case "bibliotheque":
                 if(isset($url[1])){
                     if(isset($url[2])){
-                        if($url[1]=="create"){
-                            $bookController->addBook();
+                        if($url[2]=="ps1"){
+                            require "views/ps1.view.php";
                             break;
-                        }else if($url[1]=="validate"){
-                            $globalController->addImage();
-                            $globalController->addPdf();
-                            $bookController->addBookValidate();
+                        }else if($url[2]=="ps2"){
+                            require "views/ps2.view.php";
                             break;
-                        }else if($url[1]=="read"){
-                            $bookController->displayBook($url[2]);
+                        }else if($url[2]=="ps3"){
+                            require "views/ps3.view.php";
                             break;
-                        }else if($url[1]=="update"){
-                            $bookController->updateBook($url[2]);
+                        }else if($url[2]=="ps4"){
+                            require "views/ps4.view.php";
                             break;
-                        }else if($url[1]=="confirm"){
-                            $pictureToAdd = $globalController->updateImage();
-                            $pdfToAdd = $globalController->updatePdf();
-                            $bookController->updateBookConfirm($pictureToAdd, $pdfToAdd, $url[2]);
-                            break;
-                        }else if($url[1]=="delete"){
-                            $bookController->deleteBook($url[2]);
+                        }else if($url[2]=="ps5"){
+                            require "views/ps5.view.php";
                             break;
                         }else{
                             throw new Exception("La page n'existe pas.");
                             break;
                         }
                     }else{
-
+                        if($url[1]=="sony"){
+                            require "views/sony.view.php";
+                            break;
+                        }else if($url[1]=="microsoft"){
+                            require "views/microsoft.view.php";
+                            break;
+                        }else if($url[1]=="sega"){
+                            require "views/sega.view.php";
+                            break;
+                        }else if($url[1]=="nintendo"){
+                            require "views/nintendo.view.php";
+                            break;
+                        }else{
+                            throw new Exception("La page n'existe pas.");
+                            break;
+                        }
                     }
                 }else{
                     require "views/bibliotheque.view.php";
@@ -50,10 +58,10 @@ try{
                 }
                 default :
                 throw new Exception("La page n'existe pas.");
-                
+            
             case "admin":
-                require "views/admin.view.php";
-                break;
+            require "views/admin.view.php";
+            break;
             // default :
             //     $message = "Une erreur imprévue est survenue";
         }        
