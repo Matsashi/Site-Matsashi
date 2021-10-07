@@ -17,9 +17,9 @@
                     <li id="Twitch"><a href="https://www.twitch.tv/matsashi" target="_blank">Twitch</a></li>
                     <li id="bibliotheque"><a href="<?=URL?>bibliotheque">Bibliothèque</a></li>
                     <?php if($url[0]=="accueil"){
-                        echo '<a href="accueil#home">';
+                        echo '<a href="'.URL.'accueil#home">';
                     }else{
-                        echo '<a href="accueil">';
+                        echo '<a href="'.URL.'accueil">';
                     }?><li id="LogoPng"><img src="<?=URL?>public/images/LogoRedim.png"></li></a>
                     <li id="accueil"><a href="<?=URL?>accueil#bio-projets">Bio/projets</a></li>
                     <li id="contact"><a href="<?=URL?>contact">Contact</a></li>
