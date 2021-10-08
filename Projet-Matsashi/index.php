@@ -5,6 +5,8 @@ https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 // include "controllers/GlobalController.controller.php";
 try{
     if(empty($_GET['page'])){
+        $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
+        $url[0] = "accueil";
         require "views/accueil.view.php";
     }else{
         $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);

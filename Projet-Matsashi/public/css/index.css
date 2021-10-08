@@ -80,12 +80,18 @@ ul
         transform: rotateY(720deg);
     }
 }
-#constructor, #sony{
+#constructor, #sony, #microsoft, #nintendo, #sega, #administration{
     height: 100vh;
 }
 .first-element{
     padding-top: 200px;
     margin-bottom: 125px;
+}
+.margin-top-5{
+    margin-top:5%
+}
+.margin-bottom-10{
+    margin-bottom: 10%;
 }
 
 /* Page Accueil */
@@ -180,19 +186,6 @@ h2
     color: #040010;
     font-family: "Lato";
 }
-#sony #search-form{
-    border: #040010 solid 4px;
-    box-shadow: 8px 8px 0 -4px #F5F5F5, 8px 8px 0 0 #040010;
-    margin-bottom: 50px;
-}
-#sony #search-bar-game{
-    background-color: #F5F5F5;
-    color: #040010;
-}
-#sony #search-icon{
-    background-color: #F5F5F5;
-    color: #040010;    
-}
 #sony #button-biblio{
     background-color: #F5F5F5;
     border: #040010 solid 4px;
@@ -201,6 +194,43 @@ h2
 .selected-console{
     border: #040010 solid 4px;
 }
-.margin-top-5{
-    margin-top:5%
+
+/* Page Microsoft */
+
+#microsoft{
+    background: linear-gradient(90deg, #01b1fd, #0742be);
+    color: #040010;
+    font-family: "Lato";
+}
+
+/* Page Nintendo */
+
+#nintendo{
+    background-color: #f5efd7;
+    color: black;
+}
+
+/* Page Sega */
+
+#sega{
+    background-color: #3860ff;
+}
+
+/* Page Admin */
+
+#administration .first-element{
+    margin-bottom: 0;
+}
+#administration #search-form{
+    border: none;
+    box-shadow: none;
+    font-size: 20px;
+    font-family: "Lato";
+}
+#submit-admin-connexion{
+    border: #F6D91A 3px solid;
+    border-radius: 5%;
+    background-color: transparent;
+    color: #F6D91A;
+    font-family: "Mouse Memoirs";
 }

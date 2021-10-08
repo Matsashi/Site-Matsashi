@@ -1,0 +1,17 @@
+Bibliothèque :
+
+-Faire la BDD pour editeur, support (rajouter une colonne "text" et "picture"), jeu (rajouter une colonne "front_cover", "back_cover", "support_name", "time_played", "completion", "playlist", "redif", "clip_title", "clip_link", "review_title" et "review_text"), mode et genre
+-Faire une page dynamique pour chaque console à partir de la page du constructeur (avec $url[2] et le router)
+
+Contact : 
+
+-Faire la view de la page contact
+-Faire le submit du formulaire pour que ça envoie à l'adresse directement
+
+Admin : 
+
+-Faire la page du panel
+
+MLD : 
+
+-Refaire les tables pour qu'elles correspondent mieux (table user, table jeu)

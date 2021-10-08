@@ -16,7 +16,7 @@
                 <ul id="MenuHeader">
                     <li id="Twitch"><a href="https://www.twitch.tv/matsashi" target="_blank">Twitch</a></li>
                     <li id="bibliotheque"><a href="<?=URL?>bibliotheque">Bibliothèque</a></li>
-                    <?php if($url[0]=="accueil"){
+                    <?php if($url[0]=="accueil" || $url[0]==""){
                         echo '<a href="'.URL.'accueil#home">';
                     }else{
                         echo '<a href="'.URL.'accueil">';

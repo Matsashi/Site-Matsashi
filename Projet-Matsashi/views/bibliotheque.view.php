@@ -13,10 +13,10 @@
                 </div>
             </form>
         </div>
-        <div class="row align-items-center mb-5">
+        <div class="row align-items-center margin-bottom-10">
             <div class="col-4">
                 <a href="<?=URL?>bibliotheque/microsoft">
-                    <img src="<?=URL?>public/images/Microsoft.png" width="75%">
+                    <img src="<?=URL?>public/images/logo-microsoft.png" width="75%">
                 </a>
             </div>
             <div class="col-4"></div>
