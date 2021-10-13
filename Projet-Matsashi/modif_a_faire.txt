@@ -5,7 +5,7 @@ Bibliothèque :
 
 Contact : 
 
--Faire la view de la page contact
+-Régler le soucis d'adresse mail à l'envoi du formulaire
 -Faire le submit du formulaire pour que ça envoie à l'adresse directement
 
 Admin : 
