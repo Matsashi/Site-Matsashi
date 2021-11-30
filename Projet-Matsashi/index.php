@@ -3,12 +3,12 @@ define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "
 https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'vendor\autoload.php';
+require 'vendor/autoload.php';
 // include "controllers/BookController.controller.php";
-// include "controllers/GlobalController.controller.php";
+include "controllers/GlobalController.controller.php";
+$globalController = new GlobalController;
 try{
     if(empty($_GET['page'])){
-        $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
         $url[0] = "accueil";
         require "views/accueil.view.php";
     }else{
@@ -65,14 +65,58 @@ try{
                 throw new Exception("La page n'existe pas.");
             
             case "admin":
-                require "views/admin.view.php";
-                break;
+                if(isset($url[1])){
+                    if(!empty($_SESSION["login"])){                        
+                            if($url[1] == "panel"){
+                                require "views/panel.view.php";
+                                break;
+                            }else if($url[1] == "add-game"){
+                                require "views/add-game.view.php";
+                                break;
+                            }else if($url[1] == "add-support"){
+                                require "views/add-support.view.php";
+                                break;
+                            }else if($url[1] == "update-game"){
+                                require "views/update-game.view.php";
+                                break;
+                            }else if($url[1] == "update-support"){
+                                require "views/update-support.view.php";
+                                break;
+                            }
+                    }else{
+                        if(!empty($_POST['login']) && !empty($_POST['password'])){
+                            $message = $globalController->connexionUsers($_POST['login'], $_POST['password']);
+                            if($message == "OK"){
+                                require "views/panel.view.php";
+                                break;
+                            }else{
+                                require "views/admin.view.php";
+                                break;
+                            } 
+                        }else{
+                            require "views/admin.view.php";
+                            break;
+                        }
+                    }                    
+                }else{
+                    if(!empty($_SESSION["login"])){
+                        require "views/panel.view.php";
+                        break;
+                    }else{
+                        require "views/admin.view.php";
+                        break;
+                    }
+                }
             case "contact":
                 if(isset($url[1])){
                     if($url[1] == "send"){
+
                         $mailAdress = $_POST['mail'];
                         /* Create a new PHPMailer object. */
                         $mail = new PHPMailer();
+
+                        /* Charset */
+                        $mail->CharSet = 'UTF-8';
 
                         /* Tells PHPMailer to use SMTP. */
                         $mail->isSMTP();
@@ -95,8 +139,14 @@ try{
                         /* Set the SMTP port. */
                         $mail->Port = 587;
 
+                        /* Debug */
+                        $mail->SMTPDebug = 0;
+
                         /* Set the mail sender. */
-                        $mail->setFrom($mailAdress);
+                        $mail->setFrom('contact@matsashi.fr', $mailAdress);
+
+                        /* L'adresse de réponse */
+                        $mail->addReplyTo($mailAdress);
 
                         /* Add a recipient. */
                         $mail->addAddress('contact@matsashi.fr', 'Matsashi');

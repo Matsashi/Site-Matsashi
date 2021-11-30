@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row mb-2 align-items-center justify-content-evenly">
                 <div class="col-2 py-3">
-                    <a href="<?=URL?>bibliotheque/sony/ps1"><img src="<?=URL?>public/images/console-megadrive.png" width="125%"></a>
+                    <a href="<?=URL?>bibliotheque/sony/ps1"><img src="<?=URL?>public/images/consoles/console-megadrive.png" width="125%"></a>
                 </div>
             </div>
         </div>

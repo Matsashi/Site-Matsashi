@@ -1,21 +1,21 @@
 <?php ob_start();?>
-<section id="stream-biblio">
+<section id="stream-accueil">
     <div id="stream-windows">
         <div class="first-element">
-            <!-- <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+            <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
             <div id="twitch-embed"></div>
             <script type="text/javascript">
                 new Twitch.Embed("twitch-embed",
                 {
-                width: 1081,
-                height: 500,
+                width: 1621,
+                height: 750,
                 channel: "matsashi",
                 muted: "true",
                 layout: "video-with-chat",
                 theme: "dark",
                 });
-            </script> -->
-            <iframe 
+            </script>
+            <!-- <iframe 
                 src="https://player.twitch.tv/?channel=matsashi&parent=localhost"
                 frameborder="0"
                 allowfullscreen="true"
@@ -28,30 +28,32 @@
                 src="https://www.twitch.tv/embed/matsashi/chat?parent=localhost"
                 height="500"
                 width="243">
-            </iframe>
+            </iframe> -->
         </div>        
     </div>
+</section>
+<section id="accueil-biblio">
     <h2 class="mb-5">Visiter la Bibliothèque</h2>
     <div class="mb-5">
         <div class="row align-items-center">
             <div class="col">
                 <a href="<?=URL?>bibliotheque/microsoft">
-                    <img src="<?=URL?>public/images/controller microsoft.png" width="75%">
+                    <img src="<?=URL?>public/images/consoles/controller microsoft.png" width="75%">
                 </a>
             </div>
             <div class="col">
                 <a href="<?=URL?>bibliotheque/sega">
-                    <img src="<?=URL?>public/images/genesis controller.png" width="75%">
+                    <img src="<?=URL?>public/images/consoles/genesis controller.png" width="75%">
                 </a>
             </div>
             <div class="col">
                 <a href="<?=URL?>bibliotheque/nintendo">
-                    <img src="<?=URL?>public/images/switch controller.png" width="75%">
+                    <img src="<?=URL?>public/images/consoles/switch controller.png" width="75%">
                 </a>
             </div>
             <div class="col">
                 <a href="<?=URL?>bibliotheque/sony">
-                    <img src="<?=URL?>public/images/sony controller.png" width="75%">
+                    <img src="<?=URL?>public/images/consoles/sony controller.png" width="75%">
                 </a>
             </div>
         </div>
@@ -121,7 +123,6 @@
             <div class="col-5">
                 <h3 class="bio-text-left h3-bio mb-3">Le streaming</h3>
                 <p class="bio-text-left">J'ai commencé le streaming en 2017. A l'époque les streams étaient ponctuels car c'était principalement un moyen de partager les sessions d'invocation que je faisais avec mes amis sur Summoners War. Cependant depuis Juin 2020, je me suis fixé un programme ainsi que des horaires à suivre afin d'être plus régulier et je stream sur différents jeux, les jeux revenant le plus souvent étant The Binding of Isaac et Hearthstone.</p>
-                <p class="bio-text-left">Mon programme s'étend du Dimanche soir au Jeudi soir de 21h à 1h30. J'ai commencé le streaming en 2017. A l'époque les streams étaient ponctuels car c'était principalement un moyen de partager les sessions d'invocation que je faisais avec mes amis sur Summoners War. Cependant depuis Juin 2020, je me suis fixé un programme ainsi que des horaires à suivre afin d'être plus régulier et je stream sur différents jeux, les jeux revenant le plus souvent étant The Binding of Isaac et Hearthstone.</p>
                 <p class="bio-text-left">Mon programme s'étend du Dimanche soir au Jeudi soir de 21h à 1h30.</p>
             </div>
             <div class="col-2">
@@ -138,9 +139,9 @@
             </div>
             <div class="col-5">
                 <h3 class="bio-text-left h3-bio mb-3">La chasse aux trophées</h3>
-                <p class="bio-text-left">J'ai commencé le streaming en 2017. A l'époque les streams étaient ponctuels car c'était principalement un moyen de partager les sessions d'invocation que je faisais avec mes amis sur Summoners War. Cependant depuis Juin 2020, je me suis fixé un programme ainsi que des horaires à suivre afin d'être plus régulier et je stream sur différents jeux, les jeux revenant le plus souvent étant The Binding of Isaac et Hearthstone.</p>
-                <p class="bio-text-left">Mon programme s'étend du Dimanche soir au Jeudi soir de 21h à 1h30. J'ai commencé le streaming en 2017. A l'époque les streams étaient ponctuels car c'était principalement un moyen de partager les sessions d'invocation que je faisais avec mes amis sur Summoners War. Cependant depuis Juin 2020, je me suis fixé un programme ainsi que des horaires à suivre afin d'être plus régulier et je stream sur différents jeux, les jeux revenant le plus souvent étant The Binding of Isaac et Hearthstone.</p>
-                <p class="bio-text-left">Mon programme s'étend du Dimanche soir au Jeudi soir de 21h à 1h30.</p>
+                <p class="bio-text-left">L'une des choses qui m'intéressent dans les jeux-vidéo c'est la chasse aux trophées. A chaque nouveau jeu que j'achète, je vais tenter de finir le jeu à 100% en allant chercher le trophée/succès final. Cela me permet d'explorer en profondeur les jeux auxquels je joue, d'en découvrir tous les aspects et de temps en temps de m'essayer au speedrun (finir le jeu le plus rapidement possible).</p>
+                <p class="bio-text-left">Vous pouvez d'ailleurs voir mes trophées acquis et quelques statistiques sur ma façon de jouer sur PSTHC, un incontournable pour les "Trophy Hunter" (www.psthc.fr/profil-psn-Matsashii.htm).</p>
+                <p class="bio-text-left">Jusqu'à présent je n'ai officiellement enregistré aucun temps sur aucun jeu mais il existe un jeu sur lequel j'avais tenté l'aventure du speedrun, mon jeu préféré Resident Evil 4.</p>
             </div>
         </div>
         <div class="row mb-5">

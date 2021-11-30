@@ -4,6 +4,12 @@ class User{
     private $login;
     private $password;
 
+    function __construct($login, $password)
+    {
+        $this->login = $login;
+        $this->password = $password;       
+    }
+
     /**
      * Get the value of login
      */

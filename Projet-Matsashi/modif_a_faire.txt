@@ -2,16 +2,20 @@ Bibliothèque :
 
 -Faire la BDD pour editeur, support (rajouter une colonne "text" et "picture"), jeu (rajouter une colonne "front_cover", "back_cover", "support_name", "time_played", "completion", "playlist", "redif", "clip_title", "clip_link", "review_title" et "review_text"), mode et genre
 -Faire une page dynamique pour chaque console à partir de la page du constructeur (avec $url[2] et le router)
+-Faire une page dynamique (5 jeux) avec carroussel de jeux pour chaque console
+-Faire une page dynamique avec informations pour chaque jeu
 
 Contact : 
 
--Régler le soucis d'adresse mail à l'envoi du formulaire
 -Faire le submit du formulaire pour que ça envoie à l'adresse directement
 
 Admin : 
 
+-Faire les conditions d'affichage des pages admin (connecté ou non)
 -Faire la page du panel
-
-MLD : 
-
--Refaire les tables pour qu'elles correspondent mieux (table user, table jeu)
+-Faire la page d'ajout de jeu
+-Faire la page d'ajout de support (comme ajout de jeu)
+-Faire la page de listing de jeux (tableau de 50 éléments)
+-Faire la page de modification d'un jeu spécifique
+-Faire la page de listing de supports
+-Faire la page de modification de support spécifique (identique à celle de modification de jeu)

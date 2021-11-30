@@ -80,7 +80,7 @@ ul
         transform: rotateY(720deg);
     }
 }
-#constructor, #sony, #microsoft, #nintendo, #sega, #administration{
+#constructor, #sony, #microsoft, #nintendo, #sega, #administration, #administration-panel{
     height: 100vh;
 }
 .first-element{
@@ -101,14 +101,17 @@ ul
     background: linear-gradient(#020024, #5100a8);
     height: 100%;
 }
-#stream-biblio
+#accueil-stream{
+    width: 100%;
+}
+#stream-windows{
+    margin-bottom: 120px;
+}
+#accueil-biblio
 {    
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-}
-#stream-windows{
-    margin-bottom: 120px;
 }
 h2
 {
@@ -233,4 +236,17 @@ h2
     background-color: transparent;
     color: #F6D91A;
     font-family: "Mouse Memoirs";
+}
+
+/* Page Admin Panel */
+
+#administration-panel .first-element{
+    margin-bottom: 15%;
+}
+.panel-icons{
+    font-size: 4rem;
+}
+.panel-icons sub{
+    font-size: 1.5rem;
+    margin-left: -5%;
 }

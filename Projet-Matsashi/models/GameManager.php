@@ -3,7 +3,7 @@ require "models/class/Model.php";
 class GameManager extends Model{
     private $gameList;
     public function getTable(){
-        $sql = "SELECT * FROM jeux";
+        $sql = "SELECT * FROM jeu";
         $req = $this->getDB()->prepare($sql);
         $req->execute();
         $data = $req->fetchALL(PDO::FETCH_OBJ);
@@ -12,9 +12,9 @@ class GameManager extends Model{
     public function addGame($newGame){
         $this->gameList[] = $newGame;
     }
-    public function addBookDB(){
+    public function addGameDB(){
         $info = pathinfo($_FILES['picture']['name']);
-        $sql = "INSERT INTO jeux (nom, nbPages, image) VALUES (:livre_nom, :livre_pages, :livre_image)";
+        $sql = "INSERT INTO jeu (nom, nbPages, image) VALUES (:livre_nom, :livre_pages, :livre_image)";
         $req = $this->getDB()->prepare($sql);
         $result = $req->execute([":livre_nom"=>$_POST['title'], ":livre_pages"=>$_POST['nbPages'], ":livre_image"=>$_POST['title'].".".$info['extension']]);
     }
@@ -44,7 +44,7 @@ class GameManager extends Model{
         $result = $req->execute([":livre_nom"=>$_POST['title'], ":livre_pages"=>$_POST['nbPages'], ":livre_image"=>$_POST['title'].".".$info['extension']]);
     }
     public function deleteGameDB($id){
-        $sql = "DELETE FROM jeux WHERE idJeux = :id";
+        $sql = "DELETE FROM jeu WHERE id_jeu = :id";
         $req = $this->getDB()->prepare($sql);
         $result = $req->execute([":id"=>$id]);
     }

@@ -2,7 +2,7 @@
 abstract class Model{
     private $pdo;
     private function setDB(){
-        $this->pdo = new PDO("mysql:host=localhost; dbname=projet_matsashi;charset=utf8", "root", "");
+        $this->pdo = new PDO("mysql:host=185.98.131.148; dbname=matsa1638281;charset=utf8", "matsa1638281", "x5ppc9bo6z");
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     }
     protected function getDB(){

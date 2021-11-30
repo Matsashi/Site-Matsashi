@@ -12,21 +12,21 @@
                     <h3>Consoles portable</h3>
                     <div class="row mb-5 align-items-center justify-content-evenly">
                         <div class="col-4">
-                            <a href="<?=URL?>bibliotheque/sony/ps4"><img src="<?=URL?>public/images/console-gameboy.png" width="75%"></a>
+                            <a href="<?=URL?>bibliotheque/sony/ps4"><img src="<?=URL?>public/images/consoles/console-gameboy.png" width="75%"></a>
                         </div>
                         <div class="col-4">
-                            <a href="<?=URL?>bibliotheque/sony/ps5"><img src="<?=URL?>public/images/console-gameboyColor.png" width="75%"></a>
+                            <a href="<?=URL?>bibliotheque/sony/ps5"><img src="<?=URL?>public/images/consoles/console-gameboyColor.png" width="75%"></a>
                         </div>
                         <div class="col-4">
-                            <a href="<?=URL?>bibliotheque/sony/ps5"><img src="<?=URL?>public/images/console-gbaSP.png" width="100%"></a>
+                            <a href="<?=URL?>bibliotheque/sony/ps5"><img src="<?=URL?>public/images/consoles/console-gbaSP.png" width="100%"></a>
                         </div>
                     </div>
                     <div class="row mb-2 align-items-center justify-content-evenly">
                         <div class="col-4">
-                            <a href="<?=URL?>bibliotheque/sony/ps2"><img src="<?=URL?>public/images/console-ndsLite.png" width="100%"></a>
+                            <a href="<?=URL?>bibliotheque/sony/ps2"><img src="<?=URL?>public/images/consoles/console-ndsLite.png" width="100%"></a>
                         </div>
                         <div class="col-4">
-                            <a href="<?=URL?>bibliotheque/sony/ps3"><img src="<?=URL?>public/images/console-3ds.png" width="100%"></a>
+                            <a href="<?=URL?>bibliotheque/sony/ps3"><img src="<?=URL?>public/images/consoles/console-3ds.png" width="100%"></a>
                         </div>
                     </div>
                 </div>
@@ -35,24 +35,24 @@
                     <h3>Consoles de salon</h3>
                     <div class="row mb-2 align-items-center justify-content-evenly">
                         <div class="col-4">
-                            <a href="<?=URL?>bibliotheque/sony/ps4"><img src="<?=URL?>public/images/console-nes.png" width="100%"></a>
+                            <a href="<?=URL?>bibliotheque/sony/ps4"><img src="<?=URL?>public/images/consoles/console-nes.png" width="100%"></a>
                         </div>
                         <div class="col-4">
-                            <a href="<?=URL?>bibliotheque/sony/ps5"><img src="<?=URL?>public/images/console-snes.png" width="100%"></a>
+                            <a href="<?=URL?>bibliotheque/sony/ps5"><img src="<?=URL?>public/images/consoles/console-snes.png" width="100%"></a>
                         </div>
                         <div class="col-4">
-                            <a href="<?=URL?>bibliotheque/sony/ps5"><img src="<?=URL?>public/images/console-n64.png" width="125%"></a>
+                            <a href="<?=URL?>bibliotheque/sony/ps5"><img src="<?=URL?>public/images/consoles/console-n64.png" width="125%"></a>
                         </div>
                     </div>
                     <div class="row mb-2 align-items-center justify-content-evenly">
                         <div class="col-4">
-                            <a href="<?=URL?>bibliotheque/sony/ps2"><img src="<?=URL?>public/images/console-gamecube.png" width="75%"></a>
+                            <a href="<?=URL?>bibliotheque/sony/ps2"><img src="<?=URL?>public/images/consoles/console-gamecube.png" width="75%"></a>
                         </div>
                         <div class="col-4">
-                            <a href="<?=URL?>bibliotheque/sony/ps3"><img src="<?=URL?>public/images/console-wii.png" width="75%"></a>
+                            <a href="<?=URL?>bibliotheque/sony/ps3"><img src="<?=URL?>public/images/consoles/console-wii.png" width="75%"></a>
                         </div>
                         <div class="col-4">
-                            <a href="<?=URL?>bibliotheque/sony/ps4"><img src="<?=URL?>public/images/console-switch.png" width="150%"></a>
+                            <a href="<?=URL?>bibliotheque/sony/ps4"><img src="<?=URL?>public/images/consoles/console-switch.png" width="150%"></a>
                         </div>
                     </div>
                 </div>
