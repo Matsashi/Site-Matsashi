@@ -11,4 +11,7 @@ class GlobalController{
         $message = $this->userManager->connexionUser($login, $password);
         return $message;
     }
+    public function disconnectUsers(){
+        $this->userManager->disconnectUser();
+    }
 }

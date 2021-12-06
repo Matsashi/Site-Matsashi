@@ -48,13 +48,12 @@ class UserManager extends Model{
         // }
         if($result_message == "OK"){
             $log = $login;
-            // setcookie('pseudo',$log,time()+3600,null,null,true,true);
+            setcookie('pseudo',$log,time()+3600);
             $_SESSION["pseudo"]= $log;
-            // header("location: ".URL."admin/panel");
-        // }else{
-        // header("location: ".URL."admin");
-        // }
         }
         return $result_message;
+    }
+    public function disconnectUser(){
+        setcookie('pseudo',"",time()-3600);
     }
 }

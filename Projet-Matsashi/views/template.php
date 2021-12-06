@@ -1,3 +1,4 @@
+<?php ob_start();?>
 <!DOCTYPE html>
 <html lang="fr" id="home">
     <head>
@@ -24,6 +25,12 @@
                     <li id="accueil"><a href="<?=URL?>accueil#bio-projets">Bio/projets</a></li>
                     <li id="contact"><a href="<?=URL?>contact">Contact</a></li>
                 </ul>
+                <?php 
+                    if(isset($_COOKIE["pseudo"])){
+                        echo "<ul id='login'><li>Bonjour " . $_COOKIE["pseudo"] . "</li>";
+                        echo "<li id='disconnect'><a href='". URL . "admin/disconnect'>Déconnexion</a></ul>";
+                    }
+                ?>
             </header>
         </nav>        
         <div id="container-content">

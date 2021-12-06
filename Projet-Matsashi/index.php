@@ -1,4 +1,5 @@
 <?php
+ob_start();
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "
 https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 use PHPMailer\PHPMailer\PHPMailer;
@@ -66,7 +67,7 @@ try{
             
             case "admin":
                 if(isset($url[1])){
-                    if(!empty($_SESSION["login"])){                        
+                    if(!empty($_COOKIE["pseudo"])){                        
                             if($url[1] == "panel"){
                                 require "views/panel.view.php";
                                 break;
@@ -81,6 +82,10 @@ try{
                                 break;
                             }else if($url[1] == "update-support"){
                                 require "views/update-support.view.php";
+                                break;
+                            }else if($url[1] == "disconnect"){
+                                $globalController->disconnectUsers();
+                                require "views/admin.view.php";
                                 break;
                             }
                     }else{
@@ -99,7 +104,7 @@ try{
                         }
                     }                    
                 }else{
-                    if(!empty($_SESSION["login"])){
+                    if(!empty($_COOKIE["pseudo"])){
                         require "views/panel.view.php";
                         break;
                     }else{
