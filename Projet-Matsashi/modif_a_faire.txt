@@ -10,8 +10,7 @@ Contact :
 
 Admin : 
 
--Faire le lien de déconnection dans la nav
--Faire la page d'ajout de jeu
+-Faire le traitement de la page d'ajout de jeu
 -Faire la page d'ajout de support (comme ajout de jeu)
 -Faire la page de listing de jeux (tableau de 50 éléments)
 -Faire la page de modification d'un jeu spécifique
