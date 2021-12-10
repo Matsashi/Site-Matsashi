@@ -1,4 +1,6 @@
-<?php ob_start();?>
+<?php ob_start();
+// $globalController = new GlobalController;
+?>
 <section id="create-game">
     <div class="container">
         <div class="first-element">
@@ -28,12 +30,14 @@
                     </div>
                     <div class="col">
                         <label for="supportMenu">Support :</label>
-                        <select class="form-control mb-5" name="supportMenu" required></select>
+                        <select class="form-control mb-5" name="supportMenu" required>
+                            
+                        </select>
                     </div>
                 </div>
                 <div class="row d-flex flex-row">
                     <div class="col">
-                        <label>Genre(s) :</label>
+                        <label>Genre :</label>
                         <input class="form-control mb-5" type="text" name="title" required>
                     </div>
                     <div class="col">
@@ -43,12 +47,19 @@
                 </div>
                 <div class="row d-flex flex-row">
                     <div class="col">
-                        <label>Éditeur(s) :</label>
+                        <label>Éditeur :</label>
                         <input class="form-control mb-5" type="text" name="editeur" required>
                     </div>
                     <div class="col">
                         <label for="supportMode">Mode de jeu :</label>
-                        <select class="form-control mb-5" name="supportMode" required></select>
+                        <select class="form-control mb-5" name="supportMode" required>
+                            <?php 
+                                $modes = $globalController->getModes();
+                                foreach($modes as $value){
+                                    echo "<option value='" . $value . "'>" . $value . "</option>";
+                                };
+                            ?>
+                        </select>
                     </div>
                 </div>
             </div>

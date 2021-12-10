@@ -5,7 +5,7 @@ https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
-// include "controllers/BookController.controller.php";
+include "controllers/GameController.controller.php";
 include "controllers/GlobalController.controller.php";
 $globalController = new GlobalController;
 try{
@@ -87,6 +87,10 @@ try{
                                 $globalController->disconnectUsers();
                                 require "views/admin.view.php";
                                 break;
+                            // }else if($url[1] == "validate"){
+                            //     $globalController->disconnectUsers();
+                            //     require "views/panel.view.php";
+                            //     break;
                             }
                     }else{
                         if(!empty($_POST['login']) && !empty($_POST['password'])){
