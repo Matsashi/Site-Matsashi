@@ -87,7 +87,7 @@ ul
         transform: rotateY(720deg);
     }
 }
-#constructor, #sony, #microsoft, #nintendo, #sega, #administration, #administration-panel, #create-game{
+#constructor, #sony, #microsoft, #nintendo, #sega, #administration, #administration-panel, #create-game, #create-support{
     height: 100vh;
 }
 .first-element{
@@ -264,8 +264,8 @@ h2
     margin-left: -5%;
 }
 
-/* Page Admin Create Game */
+/* Page Admin Create Game & Support*/
 
-#create-game .first-element{
+#create-game .first-element, #create-support .first-element{
     margin-bottom: 0;
 }

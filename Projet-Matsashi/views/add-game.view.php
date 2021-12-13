@@ -1,4 +1,6 @@
-<?php ob_start();?>
+<?php ob_start();
+$globalController = new GlobalController;
+?>
 <section id="create-game">
     <div class="container">
         <div class="first-element">
@@ -51,12 +53,11 @@
                     <div class="col">
                         <label for="supportMode">Mode de jeu :</label>
                         <select class="form-control mb-5" name="supportMode" required>
-                        <?php
-                            $modes = $globalController->getModes();
-                            foreach($modes as $value){
-                                echo "<option value='" . $value . "'>" . $value . "</option>";
+                        <?php 
+                            foreach($modes as $key => $value){
+                                echo "<option value='" . $value->name_mode . "'>" . $value->name_mode . "</option>";
                             };
-                        ?>
+                        ?>                        
                         </select>
                     </div>
                 </div>

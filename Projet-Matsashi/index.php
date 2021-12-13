@@ -72,6 +72,7 @@ try{
                                 require "views/panel.view.php";
                                 break;
                             }else if($url[1] == "add-game"){
+                                $modes = $globalController->getModes();
                                 require "views/add-game.view.php";
                                 break;
                             }else if($url[1] == "add-support"){
