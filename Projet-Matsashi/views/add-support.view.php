@@ -9,7 +9,7 @@ $globalController = new GlobalController;
                 <i class="fas fa-arrow-left back-arrow"></i>
             </a>
         </div>
-        <form class="justify-content-center" action="<?=URL?>admin/validate" method="POST" enctype="multipart/form-data">
+        <form class="justify-content-center" action="<?=URL?>admin/validate2" method="POST" enctype="multipart/form-data">
             <div class="py-2 bio-text-left mb-5">
                 <div class="row d-flex flex-row">
                     <div class="col">

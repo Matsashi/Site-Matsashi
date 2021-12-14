@@ -4,8 +4,7 @@ include_once("models/GameManager.php");
 class GameController{
     private $gameManager;
     function __construct(){        
-        $this->gameManager = new GameManager;
-        $this->gameManager -> loadingBooks();        
+        $this->gameManager = new GameManager;        
     }
     // public function displayBooks(){
     //     $newBook = $this->bookManager->getBooks();

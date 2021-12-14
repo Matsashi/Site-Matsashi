@@ -7,7 +7,9 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 include "controllers/GameController.controller.php";
 include "controllers/GlobalController.controller.php";
+include "controllers/SupportController.controller.php";
 $globalController = new GlobalController;
+$supportController = new SupportController;
 try{
     if(empty($_GET['page'])){
         $url[0] = "accueil";
@@ -72,6 +74,7 @@ try{
                                 require "views/panel.view.php";
                                 break;
                             }else if($url[1] == "add-game"){
+                                $supports = $supportController->getSupports();
                                 $modes = $globalController->getModes();
                                 require "views/add-game.view.php";
                                 break;
@@ -92,6 +95,11 @@ try{
                             //     $globalController->disconnectUsers();
                             //     require "views/panel.view.php";
                             //     break;
+                            }else if($url[1] == "validate2"){
+                                $globalController->addImage();
+                                $supportController->addSupport($_POST["name"], $_FILES["picture"], $_POST["text"]);
+                                require "views/panel.view.php";
+                                break;
                             }
                     }else{
                         if(!empty($_POST['login']) && !empty($_POST['password'])){

@@ -1,5 +1,4 @@
 <?php
-// require "models/Model.php";
 class UserManager extends Model{
     private $userList;
     public function getTable(){
