@@ -13,19 +13,19 @@ $globalController = new GlobalController;
             <div class="py-2 bio-text-left mb-5">
                 <div class="row d-flex flex-row">
                     <div class="col">
-                        <label>Jaquette avant :</label>
+                        <label for="front">Jaquette avant :</label>
                         <input class="form-control" type="file" aria-describedby="imgHelp" name="front" required>
                         <small id="imgHelp" class="form-text text-muted">L'image doit être au format .jpg .png ou .jpeg et le fichier doit peser moins de 1Mo</small>
                     </div>
                     <div class="col">
-                        <label>Jaquette arrière :</label>
+                        <label for="back">Jaquette arrière :</label>
                         <input class="form-control" type="file" aria-describedby="imgHelp2" name="back" required>
                         <small id="imgHelp2" class="form-text text-muted">L'image doit être au format .jpg .png ou .jpeg et le fichier doit peser moins de 1Mo</small>
                     </div>
                 </div>
                 <div class="row d-flex flex-row">
                     <div class="col">
-                        <label>Titre :</label>
+                        <label for="title">Titre :</label>
                         <input class="form-control mb-5" type="text" name="title" required>
                     </div>
                     <div class="col">
@@ -41,8 +41,8 @@ $globalController = new GlobalController;
                 </div>
                 <div class="row d-flex flex-row">
                     <div class="col">
-                        <label>Genre :</label>
-                        <input class="form-control mb-5" type="text" name="title" required>
+                        <label for="type">Genre :</label>
+                        <input class="form-control mb-5" type="text" name="type" required>
                     </div>
                     <div class="col">
                         <label for="date">Date de sortie :</label>
@@ -51,8 +51,14 @@ $globalController = new GlobalController;
                 </div>
                 <div class="row d-flex flex-row">
                     <div class="col">
-                        <label>Éditeur :</label>
-                        <input class="form-control mb-5" type="text" name="editeur" required>
+                        <label for="editeur">Éditeur :</label>
+                        <select class="form-control mb-5" name="editeur" required>
+                        <?php 
+                            foreach($editeurs as $key => $value){
+                                echo "<option value='" . $value->name_editeur . "'>" . $value->name_editeur . "</option>";
+                            };
+                        ?>                        
+                        </select>
                     </div>
                     <div class="col">
                         <label for="supportMode">Mode de jeu :</label>

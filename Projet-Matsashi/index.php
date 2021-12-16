@@ -10,6 +10,7 @@ include "controllers/GlobalController.controller.php";
 include "controllers/SupportController.controller.php";
 $globalController = new GlobalController;
 $supportController = new SupportController;
+$gameController = new GameController;
 try{
     if(empty($_GET['page'])){
         $url[0] = "accueil";
@@ -74,6 +75,7 @@ try{
                                 require "views/panel.view.php";
                                 break;
                             }else if($url[1] == "add-game"){
+                                $editeurs = $globalController->getEditeurs();
                                 $supports = $supportController->getSupports();
                                 $modes = $globalController->getModes();
                                 require "views/add-game.view.php";
@@ -91,12 +93,13 @@ try{
                                 $globalController->disconnectUsers();
                                 require "views/admin.view.php";
                                 break;
-                            // }else if($url[1] == "validate"){
-                            //     $globalController->disconnectUsers();
-                            //     require "views/panel.view.php";
-                            //     break;
+                            }else if($url[1] == "validate"){
+                                $globalController->addImageGame($_FILES);
+                                $gameController->addGame($_POST["title"], $_POST["date"], $_FILES);
+                                require "views/panel.view.php";
+                                break;
                             }else if($url[1] == "validate2"){
-                                $globalController->addImage();
+                                $globalController->addImage($_FILES);
                                 $supportController->addSupport($_POST["name"], $_FILES["picture"], $_POST["text"]);
                                 require "views/panel.view.php";
                                 break;
