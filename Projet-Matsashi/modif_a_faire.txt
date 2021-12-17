@@ -10,7 +10,6 @@ Contact :
 
 Admin : 
 
--Faire le traitement de la page d'ajout de jeu
 -Faire la page de listing de jeux (tableau de 50 éléments)
 -Faire la page de modification d'un jeu spécifique
 -Faire la page de listing de supports

@@ -84,6 +84,7 @@ try{
                                 require "views/add-support.view.php";
                                 break;
                             }else if($url[1] == "update-game"){
+                                $newGame = $gameController->displayGames();
                                 require "views/update-game.view.php";
                                 break;
                             }else if($url[1] == "update-support"){

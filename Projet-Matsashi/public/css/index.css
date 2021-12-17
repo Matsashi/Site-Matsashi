@@ -269,3 +269,9 @@ h2
 #create-game .first-element, #create-support .first-element{
     margin-bottom: 0;
 }
+
+/* Page Admin Update Game */
+
+#update-games .first-element{
+    margin-bottom: 15%;
+}

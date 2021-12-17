@@ -50,7 +50,7 @@
                     <h3>Modifier un jeu</h3>
                 </div>
                 <div class="col">
-                    <h3>Supprimer un jeu</h3>
+                    <h3>Modifier un support</h3>
                 </div>
             </div>
         </div>

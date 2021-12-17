@@ -1,5 +1,5 @@
 <?php
-class Jeu{
+class Game{
     private $id;
     private $front_cover;
     private $back_cover;
