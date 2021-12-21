@@ -25,7 +25,7 @@ try{
                 if(isset($url[1])){
                     if(isset($url[2])){
                         if($url[2]=="ps1"){
-                            require "views/ps1.view.php";
+                            require "views/console-sony.view.php";
                             break;
                         }else if($url[2]=="ps2"){
                             require "views/ps2.view.php";
@@ -76,7 +76,7 @@ try{
                                 break;
                             }else if($url[1] == "add-game"){
                                 $editeurs = $globalController->getEditeurs();
-                                $supports = $supportController->getSupports();
+                                $supports = $supportController->displaySupports();
                                 $modes = $globalController->getModes();
                                 require "views/add-game.view.php";
                                 break;
@@ -88,6 +88,7 @@ try{
                                 require "views/update-game.view.php";
                                 break;
                             }else if($url[1] == "update-support"){
+                                $newSupport = $supportController->displaySupports();
                                 require "views/update-support.view.php";
                                 break;
                             }else if($url[1] == "disconnect"){
@@ -103,6 +104,12 @@ try{
                                 $globalController->addImage($_FILES);
                                 $supportController->addSupport($_POST["name"], $_FILES["picture"], $_POST["text"]);
                                 require "views/panel.view.php";
+                                break;
+                            }else if($url[1]=="deleteSupport"){
+                                $supportController->deleteSupport($url[2]);
+                                break;
+                            }else if($url[1]=="deleteGame"){
+                                $gameController->deleteGame($url[2]);
                                 break;
                             }
                     }else{

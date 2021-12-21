@@ -68,7 +68,7 @@ class GlobalController{
             }
             if($error_message == null)
             {
-                move_uploaded_file($file['picture']['tmp_name'], "public/images/".$file['picture']['name'].".".$info['extension']);
+                move_uploaded_file($file['picture']['tmp_name'], "public/images/".$file['picture']['name']);
             }
         }else{
             throw new Exception("Vous n'avez pas ajouté d'image.");

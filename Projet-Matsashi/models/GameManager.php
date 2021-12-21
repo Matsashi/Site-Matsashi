@@ -13,6 +13,14 @@ class GameManager extends Model{
     {
         return $this->gameList;
     }
+    public function getGameById($id){
+        foreach($this->gameList as $value){
+            if($id == $value->getId()){
+                return $value;
+                break;
+            }
+        }
+    }
     public function addGame($newGame){
         $this->gameList[] = $newGame;
     }
@@ -29,5 +37,10 @@ class GameManager extends Model{
         $sql = "INSERT INTO jeu (name_jeu, date_jeu, front_cover_jeu, back_cover_jeu) VALUES (:jeu_nom, :jeu_date, :jeu_front, :jeu_back)";
         $req = $this->getDB()->prepare($sql);
         $result = $req->execute([":jeu_nom"=>$name, ":jeu_date"=>$date, ":jeu_front"=>$files['front']['name'].".".$infoFront['extension'], ":jeu_back"=>$files['back']['name'].".".$infoBack['extension']]);
+    }
+    public function deleteGameDB($id){
+        $sql = "DELETE FROM jeu WHERE id_support = :id";
+        $req = $this->getDB()->prepare($sql);
+        $result = $req->execute([":id"=>$id]);
     }
 }

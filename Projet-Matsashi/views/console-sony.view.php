@@ -1,24 +1,13 @@
 <?php ob_start();?>
 <section id="sony">
     <div class="container">
-        <!-- <div class="first-element">
-            <form class="d-flex justify-content-center">
-                <div class="input-group"  id="search-form">
-                    <input class="form-control" type="text" placeholder="Rechercher votre jeu" id="search-bar-game">
-                    <span class="input-group-append">
-                        <button class="btn " type="button" id="search-icon">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </span>
-                </div>
-            </form>
-        </div> -->
         <div class="row align-items-center mb-5 first-element">
             <div class="col-5">
-                <p class="bio-text-left">La première console de salon que j'ai eu.
-                Mes premiers jeux étaient Hercule, Harry Potter et la chambre des secrets et Marvel Super Heroes (dont le CD était et est encore parfumé).
+                <p class="bio-text-left">
+                    <?php
+                     
+                    ?>
                 </p>
-                <p class="bio-text-left">C'est mon père qui m'a transmis cette passion pour le jeu-vidéo principalement en le regardant jouer aux jeux populaires de l'époque (Tomb Raider, Resident Evil, Oddworld Abe's Oddysee, Gran Turismo et bien d'autres).</p>
             </div>
             <div class="col-2"></div>
             <div class="col-5">

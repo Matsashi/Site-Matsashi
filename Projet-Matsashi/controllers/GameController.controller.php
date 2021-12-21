@@ -14,5 +14,11 @@ class GameController{
         $newGame = $this->gameManager->getGames();
         return $newGame;
     }
+    public function deleteGame($id){
+        $cover = $this->gameManager->getGameById($id)->getCover();
+        $this->gameManager-> deleteGameDB($id);
+        unlink("public/images/".$cover);
+        header ('location:' .URL.'admin/update-game');
+    }
 }
 ?>

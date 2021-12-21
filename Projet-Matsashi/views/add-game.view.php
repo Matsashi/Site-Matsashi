@@ -31,9 +31,9 @@ $globalController = new GlobalController;
                     <div class="col">
                         <label for="supportMenu">Support :</label>
                         <select class="form-control mb-5" name="supportMenu" required>
-                        <?php 
+                        <?php
                             foreach($supports as $key => $value){
-                                echo "<option value='" . $value->name_support . "'>" . $value->name_support . "</option>";
+                                echo "<option value='" . $value->getName() . "'>" . $value->getName() . "</option>";
                             };
                         ?>
                         </select>
