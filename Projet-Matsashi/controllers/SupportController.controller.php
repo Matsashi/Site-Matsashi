@@ -21,4 +21,8 @@ class SupportController{
         unlink("public/images/".$cover);
         header ('location:' .URL.'admin/update-support');
     }
+    public function supportByName($name){
+        $supportName = $this->supportManager->getSupportByName($name);
+        return $supportName;
+    }
 }

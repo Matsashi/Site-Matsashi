@@ -24,20 +24,18 @@ try{
             case "bibliotheque":
                 if(isset($url[1])){
                     if(isset($url[2])){
-                        if($url[2]=="ps1"){
+                        if($url[1]=="sony"){
+                            $supportName = $supportController->supportByName($url[2]);
                             require "views/console-sony.view.php";
                             break;
-                        }else if($url[2]=="ps2"){
-                            require "views/ps2.view.php";
+                        }else if($url[1]=="microsoft"){
+                            require "views/console-microsoft.view.php";
                             break;
-                        }else if($url[2]=="ps3"){
-                            require "views/ps3.view.php";
+                        }else if($url[1]=="nintendo"){
+                            require "views/console-nintendo.view.php";
                             break;
-                        }else if($url[2]=="ps4"){
-                            require "views/ps4.view.php";
-                            break;
-                        }else if($url[2]=="ps5"){
-                            require "views/ps5.view.php";
+                        }else if($url[1]=="sega"){
+                            require "views/console-sega.view.php";
                             break;
                         }else{
                             throw new Exception("La page n'existe pas.");

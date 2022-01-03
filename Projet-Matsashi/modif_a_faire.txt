@@ -12,5 +12,4 @@ Admin :
 
 -Faire la page de listing de jeux (tableau de 50 éléments)
 -Faire la page de modification d'un jeu spécifique
--Faire la page de listing de supports
 -Faire la page de modification de support spécifique (identique à celle de modification de jeu)

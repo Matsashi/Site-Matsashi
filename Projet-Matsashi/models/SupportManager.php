@@ -36,6 +36,14 @@ class SupportManager extends Model{
             }
         }
     }
+    public function getSupportByName($name){
+        foreach($this->supportList as $value){
+            if($name == $value->getName()){
+                return $value;
+                break;
+            }
+        }
+    }
     public function deleteSupportDB($id){
         $sql = "DELETE FROM support WHERE id_support = :id";
         $req = $this->getDB()->prepare($sql);
