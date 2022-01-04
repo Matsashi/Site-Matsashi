@@ -68,7 +68,12 @@ try{
             
             case "admin":
                 if(isset($url[1])){
-                    if(!empty($_COOKIE["pseudo"])){                        
+                    if(!empty($_COOKIE["pseudo"])){
+                        if(isset($url[2])){
+                            $supportName = $supportController->supportByID($url[2]);
+                            require "views/modify-support.view.php";
+                            break;
+                        }else{                   
                             if($url[1] == "panel"){
                                 require "views/panel.view.php";
                                 break;
@@ -103,6 +108,15 @@ try{
                                 $supportController->addSupport($_POST["name"], $_FILES["picture"], $_POST["text"]);
                                 require "views/panel.view.php";
                                 break;
+                            }else if($url[1] == "validate3"){
+                                
+                                if($_FILES["picture"]["name"] !== ""){
+                                    $pictureName = $supportController->supportByID($_POST["id"])->getPicture();
+                                    $globalController->updateImage($_FILES, $pictureName);
+                                }
+                                $supportController->updateSupport($_POST["name"], $_FILES["picture"], $_POST["text"], $_POST["id"]);
+                                require "views/panel.view.php";
+                                break;
                             }else if($url[1]=="deleteSupport"){
                                 $supportController->deleteSupport($url[2]);
                                 break;
@@ -110,6 +124,7 @@ try{
                                 $gameController->deleteGame($url[2]);
                                 break;
                             }
+                        }
                     }else{
                         if(!empty($_POST['login']) && !empty($_POST['password'])){
                             $message = $globalController->connexionUsers($_POST['login'], $_POST['password']);

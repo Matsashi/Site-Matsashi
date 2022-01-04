@@ -74,4 +74,26 @@ class GlobalController{
             throw new Exception("Vous n'avez pas ajouté d'image.");
         }
     }
+    public static function updateImage($file, $pictureName){
+        if(!empty($file['picture'])){
+            $info = pathinfo($file['picture']['name']);
+            $error_message = null;
+            if($error_message==null)
+            {
+                if($file['picture']['size'] > 1000000){
+                    $error_message .= "depasse";
+                }
+                if( ($info['extension']!="jpg") && ($info['extension']!="png") && ($info['extension']!="jpeg") ){
+                    $error_message.="format";
+                }
+            }
+            if($error_message == null)
+            {
+                unlink("public/images/". $pictureName);
+                move_uploaded_file($file['picture']['tmp_name'], "public/images/".$file['picture']['name']);
+            }
+        }else{
+            throw new Exception("Vous n'avez pas ajouté d'image.");
+        }
+    }
 }

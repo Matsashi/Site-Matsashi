@@ -18,6 +18,18 @@ class SupportManager extends Model{
         $req = $this->getDB()->prepare($sql);
         $result = $req->execute([":support_name"=>$supportName, ":support_text"=>$supportText, ":support_image"=>$supportPicture["name"]]);
     }
+    public function updateSupportDB($supportName, $supportPicture, $supportText, $supportId){
+        if($_FILES["picture"]["name"] !== ""){
+            $info = pathinfo($_FILES['picture']['name']);
+            $sql = "UPDATE support SET name_support = :support_name, text_support = :support_text, picture_support = :support_image WHERE id_support = $supportId;";
+            $req = $this->getDB()->prepare($sql);
+            $result = $req->execute([":support_name"=>$supportName, ":support_text"=>$supportText, ":support_image"=>$_FILES["picture"]["name"]]);
+        }else{
+            $sql = "UPDATE support SET name_support = :support_name, text_support = :support_text WHERE id_support = $supportId;";
+            $req = $this->getDB()->prepare($sql);
+            $result = $req->execute([":support_name"=>$supportName, ":support_text"=>$supportText]);
+        }  
+    }
     public function addSupport($newSupport){
         $this->supportList[] = $newSupport;
     }

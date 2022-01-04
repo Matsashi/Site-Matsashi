@@ -11,6 +11,9 @@ class SupportController{
     public function addSupport($supportName, $supportPicture, $supportText){
         $this->supportManager->addSupportDB($supportName, $supportPicture, $supportText);
     }
+    public function updateSupport($supportName, $supportPicture, $supportText, $supportId){
+        $this->supportManager->updateSupportDB($supportName, $supportPicture, $supportText, $supportId);
+    }
     public function displaySupports(){
         $newSupport = $this->supportManager->getSupports();
         return $newSupport;
@@ -24,5 +27,9 @@ class SupportController{
     public function supportByName($name){
         $supportName = $this->supportManager->getSupportByName($name);
         return $supportName;
+    }
+    public function supportByID($id){
+        $supportID = $this->supportManager->getSupportById($id);
+        return $supportID;
     }
 }
