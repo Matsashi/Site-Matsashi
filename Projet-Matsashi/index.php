@@ -75,15 +75,18 @@ try{
                             break;
                         }else{                   
                             if($url[1] == "panel"){
-                                require "views/panel.view.php";
+                                header('location:'.URL.'admin/panel');
+                                // A VÉRIFIER !;
                                 break;
                             }else if($url[1] == "add-game"){
                                 $editeurs = $globalController->getEditeurs();
-                                $supports = $supportController->displaySupports();
+                                $genres = $globalController->getGenres();
                                 $modes = $globalController->getModes();
+                                $supports = $supportController->displaySupports();
                                 require "views/add-game.view.php";
                                 break;
                             }else if($url[1] == "add-support"){
+                                $constructeurs = $globalController->getConstructeurs();
                                 require "views/add-support.view.php";
                                 break;
                             }else if($url[1] == "update-game"){
@@ -96,7 +99,6 @@ try{
                                 break;
                             }else if($url[1] == "disconnect"){
                                 $globalController->disconnectUsers();
-                                require "views/admin.view.php";
                                 break;
                             }else if($url[1] == "validate"){
                                 $globalController->addImageGame($_FILES);
@@ -105,23 +107,31 @@ try{
                                 break;
                             }else if($url[1] == "validate2"){
                                 $globalController->addImage($_FILES);
-                                $supportController->addSupport($_POST["name"], $_FILES["picture"], $_POST["text"]);
+                                $supportController->addSupport($_POST["name"], $_FILES["pictureIRL"], $_POST["text"], $_FILES["pictureConsole"], $_POST["constructeur"]);
                                 require "views/panel.view.php";
                                 break;
-                            }else if($url[1] == "validate3"){
-                                
-                                if($_FILES["picture"]["name"] !== ""){
-                                    $pictureName = $supportController->supportByID($_POST["id"])->getPicture();
-                                    $globalController->updateImage($_FILES, $pictureName);
+                            }else if($url[1] == "validate3"){                                
+                                if($_FILES["pictureIRL"]["name"] !== ""){
+                                    $pictureIRLName = $supportController->supportByID($_POST["id"])->getPictureIRL();
+                                    $globalController->updateImage($_FILES, $pictureIRLName);
                                 }
-                                $supportController->updateSupport($_POST["name"], $_FILES["picture"], $_POST["text"], $_POST["id"]);
-                                require "views/panel.view.php";
+                                if($_FILES["pictureConsole"]["name"] !== ""){
+                                    $pictureConsoleName = $supportController->supportByID($_POST["id"])->getPictureConsole();
+                                    $globalController->updateImage($_FILES, $pictureConsoleName);
+                                }
+                                $supportController->updateSupport($_POST["name"], $_FILES, $_POST["text"], $_POST["id"]);
+                                header('location:'.URL.'admin/update-support');
+                                // A VÉRIFIER !;
                                 break;
                             }else if($url[1]=="deleteSupport"){
                                 $supportController->deleteSupport($url[2]);
+                                header ('location:' .URL.'admin/update-support');
+                                // A VÉRIFIER !
                                 break;
                             }else if($url[1]=="deleteGame"){
                                 $gameController->deleteGame($url[2]);
+                                header ('location:' .URL.'admin/update-game');
+                                // A VÉRIFIER !
                                 break;
                             }
                         }
@@ -129,7 +139,9 @@ try{
                         if(!empty($_POST['login']) && !empty($_POST['password'])){
                             $message = $globalController->connexionUsers($_POST['login'], $_POST['password']);
                             if($message == "OK"){
-                                require "views/panel.view.php";
+                                // require "views/panel.view.php";
+                                header('location:'.URL.'admin/panel');
+                                // A VÉRIFIER !;
                                 break;
                             }else{
                                 require "views/admin.view.php";
@@ -142,7 +154,9 @@ try{
                     }                    
                 }else{
                     if(!empty($_COOKIE["pseudo"])){
-                        require "views/panel.view.php";
+                        // require "views/panel.view.php";
+                        header('location:'.URL.'admin/panel');
+                        // A VÉRIFIER !;
                         break;
                     }else{
                         require "views/admin.view.php";

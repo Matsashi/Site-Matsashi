@@ -26,7 +26,7 @@ $globalController = new GlobalController;
                 <div class="row d-flex flex-row">
                     <div class="col">
                         <label for="title">Titre :</label>
-                        <input class="form-control mb-5" type="text" name="title" required>
+                        <input class="form-control mb-5" type="text" name="title" autocomplete="off" required>
                     </div>
                     <div class="col">
                         <label for="supportMenu">Support :</label>
@@ -42,7 +42,14 @@ $globalController = new GlobalController;
                 <div class="row d-flex flex-row">
                     <div class="col">
                         <label for="type">Genre :</label>
-                        <input class="form-control mb-5" type="text" name="type" required>
+                        <!-- <input class="form-control mb-5" type="text" name="type" required> -->
+                        <select class="form-control mb-5" name="genre" required>
+                        <?php 
+                            foreach($genres as $key => $value){
+                                echo "<option value='" . $value->name_genre . "'>" . $value->name_genre . "</option>";
+                            };
+                        ?>                        
+                        </select>
                     </div>
                     <div class="col">
                         <label for="date">Date de sortie :</label>

@@ -16,25 +16,25 @@
         <div class="row align-items-center margin-bottom-10">
             <div class="col-4">
                 <a href="<?=URL?>bibliotheque/microsoft">
-                    <img src="<?=URL?>public/images/logo-microsoft.png" width="75%">
+                    <img src="<?=URL?>public/images/logo_constructeurs/logo_microsoft.png" width="75%">
                 </a>
             </div>
             <div class="col-4"></div>
             <div class="col-4">
                 <a href="<?=URL?>bibliotheque/sony">
-                    <img src="<?=URL?>public/images/sony logo.png" width="75%">
+                    <img src="<?=URL?>public/images/logo_constructeurs/logo_sony.png" width="75%">
                 </a>
             </div>
         </div>
         <div class="row align-items-center">
             <div class="col-4">
                 <a href="<?=URL?>bibliotheque/sega">
-                    <img src="<?=URL?>public/images/sega logo.png" width="75%">
+                    <img src="<?=URL?>public/images/logo_constructeurs/logo_sega.png" width="75%">
                 </a></div>
             <div class="col-4"></div>
             <div class="col-4">
                 <a href="<?=URL?>bibliotheque/nintendo">
-                    <img src="<?=URL?>public/images/nintendo.png" width="75%">
+                    <img src="<?=URL?>public/images/logo_constructeurs/logo_nintendo.png" width="75%">
                 </a>
             </div>
         </div>

@@ -1,0 +1,34 @@
+VÉRIFICATION A FAIRE ABSOLUMENT EN PRIORITÉ :
+
+-Vérifier les images de l'index et de la bibliothèque
+-Vérifier le fonctionnement des header pour le disconnect, pour le panel, pour le deleteSupport et pour le support_modify
+-Vérifier le fonctionnement du select des genres du add-game
+-Vérifier l'ajout d'images dans création et modification de support
+-Vérifier le select des constructeurs dans support
+
+Template : 
+
+-Faire un footer
+
+Bibliothèque :
+
+-Remplacer la recherche par un bouton affichant tous les jeux en liste, avec des filtres (constructeur, support, nom)
+-Remplacer les images de constructeur locale par les images de constructeur dans la BDD
+-Remplacer les images de console locale par les images de console dans la BDD
+-Faire une page dynamique pour chaque console à partir de la page du constructeur (avec $url[2] et le router)
+-Faire une page dynamique (5 jeux) avec carroussel de jeux pour chaque console
+-Faire une page dynamique avec informations pour chaque jeu
+
+Contact : 
+
+-Faire le submit du formulaire pour que ça envoie à l'adresse directement
+
+Admin : 
+
+-Faire la page de listing de jeux (tableau de 50 éléments)
+-Faire la page de modification d'un jeu spécifique
+-Ajouter dans la BDD les images de console
+
+Conception : 
+
+-Faire un nouveau MCD / MLD correspondant mieux à la BDD actuelle

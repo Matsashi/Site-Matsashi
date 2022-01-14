@@ -12,19 +12,27 @@ class SupportManager extends Model{
     {
         return $this->supportList;
     }
-    public function addSupportDB($supportName, $supportPicture, $supportText){
-        $info = pathinfo($_FILES['picture']['name']);
-        $sql = "INSERT INTO support (name_support, text_support, picture_support) VALUES (:support_name, :support_text, :support_image)";
+    public function addSupportDB($supportName, $supportPictureIRL, $supportText, $supportPictureConsole, $idConstructeur){
+        $irl = pathinfo($_FILES['pictureIRL']['name']);
+        $console = pathinfo($_FILES['pictureConsole']['name']);
+        $sql = "INSERT INTO support (name_support, text_support, picture_support, picture_console_support, id_constructeur) VALUES (:support_name, :support_text, :support_imageIRL, :support_imageConsole, :support_idConstructeur)";
         $req = $this->getDB()->prepare($sql);
-        $result = $req->execute([":support_name"=>$supportName, ":support_text"=>$supportText, ":support_image"=>$supportPicture["name"]]);
+        $result = $req->execute([":support_name"=>$supportName, ":support_text"=>$supportText, ":support_imageIRL"=>$supportPictureIRL["name"], ":support_imageConsole"=>$supportPictureConsole["name"], ":support_idConstructeur"=>$idConstructeur]);
     }
-    public function updateSupportDB($supportName, $supportPicture, $supportText, $supportId){
-        if($_FILES["picture"]["name"] !== ""){
-            $info = pathinfo($_FILES['picture']['name']);
+    public function updateSupportDB($supportName, $file, $supportText, $supportId){
+        if($file["pictureIRL"]["name"] !== ""){
+            $info = pathinfo($file['pictureIRL']['name']);
             $sql = "UPDATE support SET name_support = :support_name, text_support = :support_text, picture_support = :support_image WHERE id_support = $supportId;";
             $req = $this->getDB()->prepare($sql);
-            $result = $req->execute([":support_name"=>$supportName, ":support_text"=>$supportText, ":support_image"=>$_FILES["picture"]["name"]]);
-        }else{
+            $result = $req->execute([":support_name"=>$supportName, ":support_text"=>$supportText, ":support_image"=>$file["pictureIRL"]["name"]]);
+        }
+        if($file["pictureConsole"]["name"] !== ""){
+            $info = pathinfo($file['pictureConsole']['name']);
+            $sql = "UPDATE support SET name_support = :support_name, text_support = :support_text, picture_support = :support_image WHERE id_support = $supportId;";
+            $req = $this->getDB()->prepare($sql);
+            $result = $req->execute([":support_name"=>$supportName, ":support_text"=>$supportText, ":support_image"=>$file["pictureConsole"]["name"]]);
+        }
+        if(($file["pictureIRL"]["name"] == "") && ($file["pictureConsole"]["name"] == "")){
             $sql = "UPDATE support SET name_support = :support_name, text_support = :support_text WHERE id_support = $supportId;";
             $req = $this->getDB()->prepare($sql);
             $result = $req->execute([":support_name"=>$supportName, ":support_text"=>$supportText]);
@@ -36,7 +44,7 @@ class SupportManager extends Model{
     public function loadingSupports(){
         $supports = $this->getTable();
         foreach($supports as $support){
-            $add = new Support($support->id_support, $support->name_support, $support->text_support, $support->picture_support);
+            $add = new Support($support->id_support, $support->name_support, $support->text_support, $support->picture_support, $support->picture_console_support, $support->idConstructeur);
             $this->addSupport($add);
         }
     }

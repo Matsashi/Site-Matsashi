@@ -14,11 +14,28 @@ $globalController = new GlobalController;
                 <div class="row d-flex flex-row">
                     <div class="col">
                         <label>Nom :</label>
-                        <input class="form-control mb-5" type="text" name="name" required>
+                        <input class="form-control mb-5" type="text" name="name" autocomplete="off" required>
                     </div>
                     <div class="col">
-                        <label>Photo :</label>
-                        <input class="form-control" type="file" aria-describedby="imgHelp" name="picture" required>
+                        <label>Photo Console :</label>
+                        <input class="form-control" type="file" aria-describedby="imgHelp2" name="pictureConsole" required>
+                        <small id="imgHelp2" class="form-text text-muted">L'image doit être au format .png avec un fond transparent et le fichier doit peser moins de 1Mo</small>
+                    </div>
+                </div>
+                <div class="row d-flex flex-row">
+                    <div class="col">
+                        <label for="constructeurMenu">Constructeurs :</label>
+                        <select class="form-control mb-5" name="constructeur" required>
+                        <?php
+                            foreach($constructeurs as $key => $value){
+                                echo "<option value='" . $value->getName() . "'>" . $value->getName() . "</option>";
+                            };
+                        ?>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Photo IRL :</label>
+                        <input class="form-control" type="file" aria-describedby="imgHelp" name="pictureIRL" required>
                         <small id="imgHelp" class="form-text text-muted">L'image doit être au format .jpg .png ou .jpeg et le fichier doit peser moins de 1Mo</small>
                     </div>
                 </div>

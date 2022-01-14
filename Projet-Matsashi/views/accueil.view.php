@@ -38,44 +38,44 @@
         <div class="row align-items-center">
             <div class="col">
                 <a href="<?=URL?>bibliotheque/microsoft">
-                    <img src="<?=URL?>public/images/consoles/controller microsoft.png" width="75%">
+                    <img src="<?=URL?>public/images/index/controller_microsoft.png" width="75%">
                 </a>
             </div>
             <div class="col">
                 <a href="<?=URL?>bibliotheque/sega">
-                    <img src="<?=URL?>public/images/consoles/genesis controller.png" width="75%">
+                    <img src="<?=URL?>public/images/index/controller_genesis.png" width="75%">
                 </a>
             </div>
             <div class="col">
                 <a href="<?=URL?>bibliotheque/nintendo">
-                    <img src="<?=URL?>public/images/consoles/switch controller.png" width="75%">
+                    <img src="<?=URL?>public/images/index/controller_switch.png" width="75%">
                 </a>
             </div>
             <div class="col">
                 <a href="<?=URL?>bibliotheque/sony">
-                    <img src="<?=URL?>public/images/consoles/sony controller.png" width="75%">
+                    <img src="<?=URL?>public/images/index/controller_sony.png" width="75%">
                 </a>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <a href="<?=URL?>bibliotheque/microsoft/pc/dofus">
-                    <img src="<?=URL?>public/images/Dofus.jpg" width="75%" class="game-selection">
+                    <img src="<?=URL?>public/images/index/Dofus.jpg" width="75%" class="game-selection">
                 </a>
             </div>
             <div class="col">
                 <a href="<?=URL?>bibliotheque/sega/genesis/sonic-spinball">
-                    <img src="<?=URL?>public/images/sonic spinball.jpg" width="75%" class="game-selection">
+                    <img src="<?=URL?>public/images/index/sonic spinball.jpg" width="75%" class="game-selection">
                 </a>
             </div>
             <div class="col">
                 <a href="<?=URL?>bibliotheque/nintendo/switch/mario-kart-8">
-                    <img src="<?=URL?>public/images/mario kart.jpg" width="75%" class="game-selection">
+                    <img src="<?=URL?>public/images/index/mario kart.jpg" width="75%" class="game-selection">
                 </a>
             </div>
             <div class="col">
                 <a href="<?=URL?>bibliotheque/sony/ps2/resident-evil-4">
-                    <img src="<?=URL?>public/images/re4 wallpaper.jpg" width="75%" class="game-selection">
+                    <img src="<?=URL?>public/images/index/re4 wallpaper.jpg" width="75%" class="game-selection">
                 </a>
             </div>
         </div>
@@ -128,12 +128,12 @@
             <div class="col-2">
             </div>
             <div class="col-5">
-                <img id="bio-matsashi-picture" src="<?=URL?>public/images/MatsashiRedim.jpg">
+                <img id="bio-matsashi-picture" src="<?=URL?>public/images/index/MatsashiRedim.jpg">
             </div>            
         </div>
         <div class="row mb-5">
             <div class="col-5">
-                <img id="bio-trophy-picture" src="<?=URL?>public/images/trophy.png">
+                <img id="bio-trophy-picture" src="<?=URL?>public/images/index/trophy.png">
             </div>
             <div class="col-2">
             </div>
@@ -149,15 +149,15 @@
                 <h3 class="bio-text-left h3-bio mb-3">Partenaires de jeu</h3>
                 <p class="bio-text-left">Malgré le fait que je joue à énormément de jeux solo, j'aime également beaucoup jouer avec des amis. Que ce soit en coopération ou en compétition, le jeu à plusieurs est toujours source de plaisir mais aussi très souvent source de rage.</p>
                 <p class="bio-text-left">Mes partenaires de jeu principaux :
-                <br>- Nicohero <a href="https://www.twitch.tv/nicohero8">(Twitch.tv/nicohero8)</a>
+                <br>- Nicohero <a href="https://www.twitch.tv/nicohero8" target="_blank">(Twitch.tv/nicohero8)</a>
                 <br>- Karmatem
-                <br>- Asalyx
-                <br>- Bouyah <a href="https://www.twitch.tv/bouyah_kikiwi">(Twitch.tv/bouyah_kikiwi)</a></p>
+                <br>- Asalyx <a href="https://www.twitch.tv/asalyx" target="_blank">(Twitch.tv/asalyx)</a>
+                <br>- Bouyah <a href="https://www.twitch.tv/bouyah_kikiwi" target="_blank">(Twitch.tv/bouyah_kikiwi)</a></p>
             </div>
             <div class="col-2">
             </div>
             <div class="col-5">
-                <img id="bio-handshake-picture" src="<?=URL?>public/images/Handshake.jpg">
+                <img id="bio-handshake-picture" src="<?=URL?>public/images/index/Handshake.jpg">
             </div>
         </div>
     </div>    

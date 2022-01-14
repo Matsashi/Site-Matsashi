@@ -3,13 +3,17 @@ class Support{
     private $id;
     private $name;
     private $text;
-    private $picture;
-    function __construct($ID, $name, $text, $picture)
+    private $pictureIRL;
+    private $pictureConsole;
+    private $idConstructeur;
+    function __construct($ID, $name, $text, $pictureIRL, $pictureConsole, $idConstructeur)
     {
         $this->id = $ID;
         $this->name = $name;
         $this->text = $text;
-        $this->picture = $picture; 
+        $this->pictureIRL = $pictureIRL;
+        $this->pictureConsole = $pictureConsole;
+        $this->idConstructeur = $idConstructeur;
     }
     public function getId()
     {
@@ -35,13 +39,33 @@ class Support{
 
         return $this;
     }
-    public function getPicture()
+    public function getPictureIRL()
     {
-        return $this->picture;
+        return $this->pictureIRL;
     }
-    public function setPicture($picture): self
+    public function setPictureIRL($pictureIRL): self
     {
-        $this->picture = $picture;
+        $this->pictureIRL = $pictureIRL;
+
+        return $this;
+    }
+    public function getPictureConsole()
+    {
+        return $this->pictureConsole;
+    }
+    public function setPictureConsole($pictureConsole): self
+    {
+        $this->pictureConsole = $pictureConsole;
+
+        return $this;
+    }
+    public function getIdConstructeur()
+    {
+        return $this->idConstructeur;
+    }
+    public function setIdConstructeur($idConstructeur): self
+    {
+        $this->idConstructeur = $idConstructeur;
 
         return $this;
     }

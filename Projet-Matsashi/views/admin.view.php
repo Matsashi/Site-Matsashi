@@ -7,7 +7,7 @@
         <form class="justify-content-center" id="search-form" action="<?=URL?>admin/panel" method="POST">
             <div class="py-2 bio-text-left mb-5">
                 <label>Login :</label>
-                <input class="form-control mb-5" type="text" placeholder="Votre identifiant" name="login">
+                <input class="form-control mb-5" type="text" placeholder="Votre identifiant" name="login" autocomplete="off">
                 <label>Mot de passe : </label>
                 <input class="form-control" type="password" placeholder="Votre mot de passe" name="password">
             </div>
