@@ -53,6 +53,7 @@ class UserManager extends Model{
         return $result_message;
     }
     public function disconnectUser(){
+        unset($_COOKIE["pseudo"]);
         setcookie('pseudo',"",time()-3600);
     }
 }

@@ -117,7 +117,7 @@ ul
 #container-content
 {
     background: linear-gradient(#020024, #5100a8);
-    height: 100%;
+    height: fit-content;
 }
 #accueil-stream{
     width: 100%;

@@ -44,7 +44,7 @@ class SupportManager extends Model{
     public function loadingSupports(){
         $supports = $this->getTable();
         foreach($supports as $support){
-            $add = new Support($support->id_support, $support->name_support, $support->text_support, $support->picture_support, $support->picture_console_support, $support->idConstructeur);
+            $add = new Support($support->id_support, $support->name_support, $support->text_support, $support->picture_support, $support->picture_console_support, $support->id_constructeur);
             $this->addSupport($add);
         }
     }

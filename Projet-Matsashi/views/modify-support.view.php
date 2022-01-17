@@ -1,5 +1,4 @@
 <?php ob_start();
-$globalController = new GlobalController;
 ?>
 <section id="modify-support">
     <div class="container">
@@ -19,7 +18,7 @@ $globalController = new GlobalController;
                     </div>
                     <div class="col">
                         <label>Photo Console :</label>
-                        <input class="form-control" type="file" aria-describedby="imgHelp2" name="pictureConsole" required>
+                        <input class="form-control" type="file" aria-describedby="imgHelp2" name="pictureConsole">
                         <small id="imgHelp2" class="form-text text-muted">L'image doit être au format .png avec un fond transparent et le fichier doit peser moins de 1Mo</small>
                     </div>
                 </div>
@@ -28,15 +27,17 @@ $globalController = new GlobalController;
                         <label for="constructeurMenu">Constructeurs :</label>
                         <select class="form-control mb-5" name="constructeurMenu" required>
                         <?php
+                            $constructeurName = $constructeurName->getName();
+                            echo "<option value='". $constructeurName . "'hidden selected>". $constructeurName. "</option>";
                             foreach($constructeurs as $key => $value){
-                                echo "<option value='" . $value->getName() . "'>" . $value->getName() . "</option>";
+                                echo "<option value='" . $value->name_constructeur . "'>" . $value->name_constructeur . "</option>";
                             };
                         ?>
                         </select>
                     </div>
                     <div class="col">
                         <label>Photo IRL :</label>
-                        <input class="form-control" type="file" aria-describedby="imgHelp" name="pictureIRL" required>
+                        <input class="form-control" type="file" aria-describedby="imgHelp" name="pictureIRL">
                         <small id="imgHelp" class="form-text text-muted">L'image doit être au format .jpg .png ou .jpeg et le fichier doit peser moins de 1Mo</small>
                     </div>
                 </div>

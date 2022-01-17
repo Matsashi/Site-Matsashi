@@ -42,7 +42,6 @@ $globalController = new GlobalController;
                 <div class="row d-flex flex-row">
                     <div class="col">
                         <label for="type">Genre :</label>
-                        <!-- <input class="form-control mb-5" type="text" name="type" required> -->
                         <select class="form-control mb-5" name="genre" required>
                         <?php 
                             foreach($genres as $key => $value){

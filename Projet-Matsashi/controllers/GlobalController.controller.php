@@ -5,19 +5,19 @@ include_once("models/Mode.php");
 include_once("models/ModeManager.php");
 include_once("models/Editeur.php");
 include_once("models/EditeurManager.php");
+include_once("models/Genre.php");
+include_once("models/GenreManager.php");
+
 class GlobalController{
     private $userManager;
     private $modeManager;
     private $editeurManager;
     private $genreManager;
-    private $constructeurManager;
     function __construct(){      
         $this->userManager = new UserManager;
-        // $this->userManager -> loadingUsers();
         $this->modeManager = new ModeManager;
         $this->editeurManager = new EditeurManager;
         $this->genreManager = new GenreManager;
-        $this->constructeurManager = new ConstructeurManager;
     }
     public function connexionUsers($login, $password){
         $message = $this->userManager->connexionUser($login, $password);
@@ -25,8 +25,6 @@ class GlobalController{
     }
     public function disconnectUsers(){
         $this->userManager->disconnectUser();
-        header('location:'.URL.'admin');
-        // A VÉRIFIER !
     }
     public function getModes(){
         $modes = $this->modeManager->getTable();
@@ -39,10 +37,6 @@ class GlobalController{
     public function getGenres(){
         $genres = $this->genreManager->getTable();
         return $genres;
-    }
-    public function getConstructeurs(){
-        $constructeurs = $this->constructeurManager->getTable();
-        return $constructeurs;
     }
     public static function addImageGame($files){
         if(!empty($files['front']) && !empty($files['back'])){

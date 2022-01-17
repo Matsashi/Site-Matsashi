@@ -9,16 +9,17 @@
         </div>
         <table class="table text-center">
             <tr class="table-head">
-                <th>Image</th>
+                <th colspan="2">Images</th>
                 <th>Nom</th>
                 <th>Texte</th>
                 <th colspan="2">Actions</th>
             </tr>
             <?php
-            foreach($newSupport as $value):
+            foreach($newSupport as $key => $value):
             ?>
             <tr>
-                <td class="align-middle"><img src="<?=URL?>public/images/<?=$value->getPicture()?>" alt="<?=$value->getName()?>" width="100px;">
+                <td class="align-middle"><img src="<?=URL?>public/images/matt_consoles/<?=$value->getPictureIRL()?>" alt="<?=$value->getName()?>" width="100px;"></td>
+                <td class="align-middle"><img src="<?=URL?>public/images/consoles/<?=$value->getPictureConsole()?>" alt="<?=$value->getName()?>" width="100px;"></td>
                 <td class="align-middle name-support"><?=$value->getName()?></td>
                 <td class="align-middle text-support"><?=$value->getText()?></td>
                 <td class="align-middle"><a href="update-support/<?=$value->getId()?>" class="btn btn-warning">Modifier</a></td>
