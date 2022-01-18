@@ -3,7 +3,7 @@
     <div class="container">
         <div class="first-element">
             <div class="align-items-center mb-5">
-            <img src="<?=URL?>public/images/logo_sega.png" width="35%">
+            <img src="<?=URL?>public/images/logo_constructeurs/logo_sega.png" width="35%">
         </div>
         </div>
         

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="first-element">
             <div class="align-items-center mb-5">
-                <img src="<?=URL?>public/images/logo_sony.png" width="50%">
+                <img src="<?=URL?>public/images/logo_constructeurs/logo_sony.png" width="50%">
             </div>
         </div>        
         <div class="container">
