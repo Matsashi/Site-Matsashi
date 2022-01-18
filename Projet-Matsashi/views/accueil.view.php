@@ -140,7 +140,9 @@
             <div class="col-5">
                 <h3 class="bio-text-left h3-bio mb-3">La chasse aux trophées</h3>
                 <p class="bio-text-left">L'une des choses qui m'intéressent dans les jeux-vidéo c'est la chasse aux trophées. A chaque nouveau jeu que j'achète, je vais tenter de finir le jeu à 100% en allant chercher le trophée/succès final. Cela me permet d'explorer en profondeur les jeux auxquels je joue, d'en découvrir tous les aspects et de temps en temps de m'essayer au speedrun (finir le jeu le plus rapidement possible).</p>
-                <p class="bio-text-left">Vous pouvez d'ailleurs voir mes trophées acquis et quelques statistiques sur ma façon de jouer sur PSTHC, un incontournable pour les "Trophy Hunter" (www.psthc.fr/profil-psn-Matsashii.htm).</p>
+                <p class="bio-text-left">Vous pouvez d'ailleurs voir mes trophées acquis et quelques statistiques sur ma façon de jouer sur PSTHC, un incontournable pour les "Trophy Hunter" 
+                    <a href="www.psthc.fr/profil-psn-Matsashii.htm">(www.psthc.fr/profil-psn-Matsashii.htm).</a>
+                </p>
                 <p class="bio-text-left">Jusqu'à présent je n'ai officiellement enregistré aucun temps sur aucun jeu mais il existe un jeu sur lequel j'avais tenté l'aventure du speedrun, mon jeu préféré Resident Evil 4.</p>
             </div>
         </div>
