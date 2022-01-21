@@ -1,6 +1,5 @@
 VÉRIFICATION A FAIRE ABSOLUMENT EN PRIORITÉ :
 
--Vérifier les images de l'index et de la bibliothèque
 -Vérifier le fonctionnement des header pour le panel, pour le deleteSupport et pour le support_modify
 -Vérifier l'ajout d'images dans création et modification de support
 
@@ -25,7 +24,3 @@ Admin :
 
 -Faire la page de listing de jeux (tableau de 50 éléments)
 -Faire la page de modification d'un jeu spécifique
-
-Conception : 
-
--Faire un nouveau MCD / MLD correspondant mieux à la BDD actuelle
