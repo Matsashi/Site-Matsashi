@@ -80,8 +80,6 @@ try{
                         }else{                   
                             if($url[1] == "panel"){
                                 require "views/panel.view.php";
-                                // header('location:'.URL.'admin/panel');
-                                // A VÉRIFIER !;
                                 break;
                             }else if($url[1] == "add-game"){
                                 $editeurs = $globalController->getEditeurs();
@@ -106,7 +104,6 @@ try{
                             }else if($url[1] == "disconnect"){
                                 $globalController->disconnectUsers();
                                 header('location: admin');
-                                // A VÉRIFIER !
                                 break;
                             }else if($url[1] == "validate"){
                                 $globalController->addImageGame($_FILES);
@@ -161,8 +158,6 @@ try{
                 }else{
                     if(!empty($_COOKIE["pseudo"])){
                         require "views/panel.view.php";
-                        // header('location: panel');
-                        // A VÉRIFIER !;
                         break;
                     }else{
                         require "views/admin.view.php";

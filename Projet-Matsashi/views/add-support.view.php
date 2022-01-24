@@ -10,7 +10,7 @@ $globalController = new GlobalController;
             </a>
         </div>
         <form class="justify-content-center" action="<?=URL?>admin/validate2" method="POST" enctype="multipart/form-data">
-            <div class="py-2 bio-text-left mb-2">
+            <div class="py-2 bio-text-left mb-4">
                 <div class="row d-flex flex-row">
                     <div class="col">
                         <label>Nom :</label>
@@ -24,7 +24,7 @@ $globalController = new GlobalController;
                 </div>
                 <div class="row d-flex flex-row">
                     <div class="col">
-                        <label for="constructeurMenu">Constructeurs :</label>
+                        <label for="constructeurMenu">Constructeur :</label>
                         <select class="form-control mb-5" name="constructeur" required>
                         <?php
                             foreach($constructeurs as $key => $value){
@@ -42,7 +42,7 @@ $globalController = new GlobalController;
                 <div class="row d-flex flex-row">
                     <div class="col">
                         <label for="date">Texte :</label>
-                        <textarea class="form-control mb-5" name="text" rows="10" required></textarea>
+                        <textarea class="form-control" name="text" rows="10" required></textarea>
                     </div>
                 </div>
             </div>

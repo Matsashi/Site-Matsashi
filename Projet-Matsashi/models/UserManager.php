@@ -24,7 +24,6 @@ class UserManager extends Model{
     }
     public function connexionUser($login, $password){
         $result_message = null;
-        // if(!empty($_POST['login']) && !empty($_POST['password'])){
             if($result_message==null){
                 $data = $this->getTable();
                 foreach ($data as $valeur) {
@@ -44,7 +43,6 @@ class UserManager extends Model{
             {
                 $result_message="Erreur";
             }
-        // }
         if($result_message == "OK"){
             $log = $login;
             setcookie('pseudo',$log,time()+3600);
