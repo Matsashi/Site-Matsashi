@@ -111,6 +111,9 @@ ul
     border: #F6D91A solid 3px;
     background-color: #5100A8;
 }
+.accueil-mobile{
+    display: none;
+}
 
 /* Page Accueil */
 
@@ -136,7 +139,7 @@ h2
     font-size: 100px;
 }
 .game-selection{
-    border: var(--yellow-color) solid 7px;
+    border: #F6D91A solid 7px;
 }
 .game-selection-text{
     font-family: "Lato";
@@ -291,4 +294,30 @@ h2
 }
 #modify-support .first-element{
     margin-bottom: 0;
+}
+
+@media screen and (max-width: 860px){
+    .accueil-pc{
+        display: none;
+    }
+    .accueil-mobile{
+        display: flex;
+    }
+    #bio-handshake-picture{
+        width: 50%;
+    }
+    #bio-trophy-picture{
+        width: 50%;
+    }
+    #bio-matsashi-picture{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 570px){
+    h2{
+        font-size: 50px;
+    }
+    h3{
+        font-size: 35px !important;
+    }
 }
