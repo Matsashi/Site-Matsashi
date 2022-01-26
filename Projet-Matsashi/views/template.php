@@ -15,15 +15,35 @@
         <nav>
             <header>
                 <ul id="MenuHeader">
-                    <li id="Twitch"><a href="https://www.twitch.tv/matsashi" target="_blank">Twitch</a></li>
-                    <li id="bibliotheque"><a href="<?=URL?>bibliotheque">Bibliothèque</a></li>
+                    <li id="Twitch">
+                        <a href="https://www.twitch.tv/matsashi" target="_blank">
+                            <p class="accueil-pc">Twitch</p>
+                            <i class="fab fa-twitch accueil-mobile"></i>
+                        </a>
+                    </li>
+                    <li id="bibliotheque">
+                        <a href="<?=URL?>bibliotheque">
+                            <p class="accueil-pc">Bibliothèque</p>
+                            <i class="fas fa-book-open accueil-mobile"></i>
+                        </a>
+                    </li>
                     <?php if($url[0]=="accueil" || $url[0]==""){
                         echo '<a href="'.URL.'accueil#home">';
                     }else{
                         echo '<a href="'.URL.'accueil">';
                     }?><li id="LogoPng"><img src="<?=URL?>public/images/LogoRedim.png"></li></a>
-                    <li id="accueil"><a href="<?=URL?>accueil#bio-projets">Bio/projets</a></li>
-                    <li id="contact"><a href="<?=URL?>contact">Contact</a></li>
+                    <li id="accueil">
+                        <a href="<?=URL?>accueil#bio-projets">
+                            <p class="accueil-pc">Bio/projets</p>
+                            <i class="fas fa-id-card accueil-mobile"></i>
+                        </a>
+                    </li>
+                    <li id="contact">
+                        <a href="<?=URL?>contact">
+                            <p class="accueil-pc">Contact</p>
+                            <i class="fas fa-envelope accueil-mobile"></i>
+                        </a>
+                    </li>
                 </ul>
                 <?php 
                     if(isset($_COOKIE["pseudo"])){

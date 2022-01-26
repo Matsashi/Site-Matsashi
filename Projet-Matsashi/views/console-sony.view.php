@@ -11,7 +11,7 @@
             </div>
             <div class="col-2"></div>
             <div class="col-5">
-                <img src="<?=URL?>public/images/<?=$supportName->getPicture()?>" width="75%">
+                <img src="<?=URL?>public/images/matt_consoles/<?=$supportName->getPictureIRL()?>" width="75%">
             </div>
         </div>
         <div class="container">
@@ -22,19 +22,19 @@
             </div>
             <div class="row align-items-center justify-content-evenly margin-top-5">
                 <div class="col-2 selected-console py-3">
-                    <a href="<?=URL?>bibliotheque/sony/PS1"><img src="<?=URL?>public/images/logo-ps1.png" width="75%"></a>
+                    <a href="<?=URL?>bibliotheque/sony/PS1"><img src="<?=URL?>public/images/logo_consoles/logo_PS1.png" width="75%"></a>
                 </div>
                 <div class="col-2">
-                    <a href="<?=URL?>bibliotheque/sony/PS2"><img src="<?=URL?>public/images/logo-ps2.png" width="75%"></a>
+                    <a href="<?=URL?>bibliotheque/sony/PS2"><img src="<?=URL?>public/images/logo_consoles/logo_PS2.png" width="75%"></a>
                 </div>
                 <div class="col-2">
-                    <a href="<?=URL?>bibliotheque/sony/PS3"><img src="<?=URL?>public/images/logo-ps3.png" width="75%"></a>
+                    <a href="<?=URL?>bibliotheque/sony/PS3"><img src="<?=URL?>public/images/logo_consoles/logo_PS3.png" width="75%"></a>
                 </div>
                 <div class="col-2">
-                    <a href="<?=URL?>bibliotheque/sony/PS4"><img src="<?=URL?>public/images/logo-ps4.png" width="75%"></a>
+                    <a href="<?=URL?>bibliotheque/sony/PS4"><img src="<?=URL?>public/images/logo_consoles/logo_PS4.png" width="75%"></a>
                 </div>
                 <div class="col-2">
-                    <a href="<?=URL?>bibliotheque/sony/PS5"><img src="<?=URL?>public/images/logo-ps5.png" width="75%"></a>
+                    <a href="<?=URL?>bibliotheque/sony/PS5"><img src="<?=URL?>public/images/logo_consoles/logo_PS5.png" width="75%"></a>
                 </div>
             </div>
         </div>

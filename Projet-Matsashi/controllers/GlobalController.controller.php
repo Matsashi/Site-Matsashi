@@ -62,7 +62,9 @@ class GlobalController{
         }
     }
     public static function addImage($file){
-        if(!empty($file['pictureIRL'])){
+        if(empty($file['pictureIRL']) || empty($file['pictureConsole'])){
+            throw new Exception("Vous n'avez pas ajouté toutes les images nécessaires.");
+        }else{
             $info = pathinfo($file['pictureIRL']['name']);
             $error_message = null;
             if($error_message==null){
@@ -76,24 +78,23 @@ class GlobalController{
             if($error_message == null){
                 move_uploaded_file($file['pictureIRL']['tmp_name'], "public/images/matt_consoles/".$file['pictureIRL']['name']);
             }
-        }
-        if(!empty($file['pictureConsole'])){
-            $info = pathinfo($file['pictureConsole']['name']);
-            $error_message = null;
-            if($error_message==null){
-                if($file['pictureConsole']['size'] > 1000000){
-                    $error_message .= "depasse";
-                }
-                if(($info['extension']!="png")){
-                    $error_message.="format";
-                }
-            }
             if($error_message == null){
-                move_uploaded_file($file['pictureConsole']['tmp_name'], "public/images/consoles/".$file['pictureConsole']['name']);
+                $info = pathinfo($file['pictureConsole']['name']);
+                $error_message = null;
+                if($error_message==null){
+                    if($file['pictureConsole']['size'] > 1000000){
+                        $error_message .= "depasse";
+                    }
+                    if(($info['extension']!="png")){
+                        $error_message.="format";
+                    }
+                }
+                if($error_message == null){
+                    move_uploaded_file($file['pictureConsole']['tmp_name'], "public/images/consoles/".$file['pictureConsole']['name']);
+                    $error_message = "OK";
+                }
             }
-        }
-        if(empty($file['pictureIRL']) && empty($file['pictureConsole'])){
-            throw new Exception("Vous n'avez pas ajouté d'image.");
+            return $error_message;
         }
     }
     public static function updateImage($file, $pictureName){
