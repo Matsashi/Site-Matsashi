@@ -2542,7 +2542,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF7gbrj0x73XUQ="
 					},
-					"name": "Afficher le message d'erreur"
+					"name": "Afficher le message d'erreur",
+					"kind": "sendSignal"
 				},
 				{
 					"_type": "UMLActivityFinalNode",
@@ -2785,7 +2786,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF7gbv9Fx8G1GQ="
 							},
-							"name": "Afficher le message de suppression du jeu"
+							"name": "Afficher le message de suppression du jeu",
+							"kind": "sendSignal"
 						}
 					]
 				},

@@ -47,7 +47,7 @@
                 </ul>
                 <?php 
                     if(isset($_COOKIE["pseudo"])){
-                        echo "<ul id='login'><li>Bonjour " . $_COOKIE["pseudo"] . "</li>";
+                        echo "<ul id='login'><li>Bonjour " . htmlspecialchars($_COOKIE["pseudo"]) . "</li>";
                         echo "<li id='disconnect'><a href='". URL . "admin/disconnect'>Déconnexion</a></ul>";
                     }
                 ?>
