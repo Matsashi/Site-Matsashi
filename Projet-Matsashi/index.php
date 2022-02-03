@@ -72,11 +72,18 @@ try{
                 if(isset($url[1])){
                     if(!empty($_COOKIE["pseudo"])){
                         if(isset($url[2])){
+                            if($url[1]=="deleteSupport"){
+                                $supportController->deleteSupport($url[2]);
+                                header ('location:' . URL);
+                                // A VÉRIFIER !
+                                break;
+                            }else if($url[1]=="update-support"){
                             $supportName = $supportController->supportByID($url[2]);
                             $constructeurName = $constructeurController->constructeurById($supportName->getIdConstructeur());
                             $constructeurs = $constructeurController->getConstructeurs();
                             require "views/modify-support.view.php";
                             break;
+                            }
                         }else{                   
                             if($url[1] == "panel"){
                                 require "views/panel.view.php";
@@ -127,11 +134,6 @@ try{
                                 $supportController->updateSupport($_POST["name"], $_FILES, $_POST["text"], $_POST["id"]);
                                 header('location: update-support');
                                 // A VÉRIFIER !;
-                                break;
-                            }else if($url[1]=="deleteSupport"){
-                                $supportController->deleteSupport($url[2]);
-                                header ('location: update-support');
-                                // A VÉRIFIER !
                                 break;
                             }else if($url[1]=="deleteGame"){
                                 $gameController->deleteGame($url[2]);

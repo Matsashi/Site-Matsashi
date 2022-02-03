@@ -23,7 +23,7 @@
                 <td class="align-middle name-support"><?=$value->getName()?></td>
                 <td class="align-middle text-support"><?=$value->getText()?></td>
                 <td class="align-middle"><a href="update-support/<?=$value->getId()?>" class="btn btn-warning">Modifier</a></td>
-                <td class="align-middle buttonDelete"><a href="admin/deleteSupport/<?=$value->getId()?>" class="btn btn-danger" onclick="return confirm('Etes-vous sûr(e) de vouloir supprimer ce support ?');">Supprimer</a></td>
+                <td class="align-middle buttonDelete"><a href="deleteSupport/<?=$value->getId()?>" class="btn btn-danger" onclick="return confirm('Etes-vous sûr(e) de vouloir supprimer ce support ?');">Supprimer</a></td>
             </tr>
             <?php endforeach?>
         </table>

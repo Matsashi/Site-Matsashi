@@ -19,9 +19,12 @@ class SupportController{
         return $newSupport;
     }
     public function deleteSupport($id){
-        $cover = $this->supportManager->getSupportById($id)->getPicture();
+        $cover = $this->supportManager->getSupportById($id);
+        $pictureConsole = $cover->getPictureConsole();
+        $cover = $cover->getPictureIRL();
         $this->supportManager-> deleteSupportDB($id);
-        unlink("public/images/".$cover);
+        unlink("public/images/matt_consoles/".$cover);
+        unlink("public/images/consoles/".$pictureConsole);
     }
     public function supportByName($name){
         $supportName = $this->supportManager->getSupportByName($name);

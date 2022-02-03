@@ -13,6 +13,7 @@ class SupportManager extends Model{
         return $this->supportList;
     }
     public function addSupportDB($supportName, $supportPictureIRL, $supportText, $supportPictureConsole, $idConstructeur){
+        // var_dump($idConstructeur);exit;
         $sql = "INSERT INTO support (name_support, text_support, picture_support, picture_console_support, id_constructeur) VALUES (:support_name, :support_text, :support_imageIRL, :support_imageConsole, :support_idConstructeur)";
         $req = $this->getDB()->prepare($sql);
         $result = $req->execute([":support_name"=>$supportName, ":support_text"=>$supportText, ":support_imageIRL"=>$supportPictureIRL["name"], ":support_imageConsole"=>$supportPictureConsole["name"], ":support_idConstructeur"=>$idConstructeur]);

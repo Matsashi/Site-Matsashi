@@ -28,7 +28,7 @@ $globalController = new GlobalController;
                         <select class="form-control mb-5" name="constructeur" required>
                         <?php
                             foreach($constructeurs as $key => $value){
-                                echo "<option value='" . $value->name_constructeur . "'>" . $value->name_constructeur . "</option>";
+                                echo "<option value='" . $value->id_constructeur . "'>" . $value->name_constructeur . "</option>";
                             };
                         ?>
                         </select>
