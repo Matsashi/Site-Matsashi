@@ -88,7 +88,7 @@ ul
     }
 }
 #constructor, #sony, #microsoft, #nintendo, #sega, #administration, #administration-panel, #create-game, #create-support, #update-support, #modify-support, #modify-game{
-    height: 100vh;
+    min-height: 100vh;
 }
 .first-element{
     padding-top: 200px;

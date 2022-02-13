@@ -10,6 +10,15 @@
         <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
         <link href="<?=URL?>public/css/index.css" rel="stylesheet">
         <link rel="icon" href="<?=URL?>public/images/LogoRedim.png">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6E4LLPBK23"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6E4LLPBK23');
+        </script>
     </head>
     <body>
         <nav>
@@ -46,8 +55,8 @@
                     </li>
                 </ul>
                 <?php 
-                    if(isset($_COOKIE["pseudo"])){
-                        echo "<ul id='login'><li>Bonjour " . htmlspecialchars($_COOKIE["pseudo"]) . "</li>";
+                    if(isset($_SESSION["pseudo"])){
+                        echo "<ul id='login'><li>Bonjour " . htmlspecialchars($_SESSION["pseudo"]) . "</li>";
                         echo "<li id='disconnect'><a href='". URL . "admin/disconnect'>Déconnexion</a></ul>";
                     }
                 ?>

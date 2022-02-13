@@ -1,4 +1,7 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'vendor/autoload.php';
 include_once("models/User.php");
 include_once("models/UserManager.php");
 include_once("models/Mode.php");
@@ -132,6 +135,60 @@ class GlobalController{
         }
         if(empty($file['pictureIRL']) && empty($file['pictureConsole'])){
             throw new Exception("Vous n'avez pas ajouté d'image.");
+        }
+    }
+    public function sendMail(){
+        $mailAdress = $_POST['mail'];
+        /* Create a new PHPMailer object. */
+        $mail = new PHPMailer();
+
+        /* Charset */
+        $mail->CharSet = 'UTF-8';
+
+        /* Tells PHPMailer to use SMTP. */
+        $mail->isSMTP();
+        
+        /* SMTP server address. */
+        $mail->Host = 'mail49.lwspanel.com';
+
+        /* Use SMTP authentication. */
+        $mail->SMTPAuth = TRUE;
+        
+        /* Set the encryption system. */
+        $mail->SMTPSecure = 'tls';
+        
+        /* SMTP authentication username. */
+        $mail->Username = 'contact@matsashi.fr';
+        
+        /* SMTP authentication password. */
+        $mail->Password = 'gD3*FB@wfHk2xfE';
+        
+        /* Set the SMTP port. */
+        $mail->Port = 587;
+
+        /* Debug */
+        $mail->SMTPDebug = 0;
+
+        /* Set the mail sender. */
+        $mail->setFrom('contact@matsashi.fr', $mailAdress);
+
+        /* L'adresse de réponse */
+        $mail->addReplyTo($mailAdress);
+
+        /* Add a recipient. */
+        $mail->addAddress('contact@matsashi.fr', 'Matsashi');
+
+        /* Set the subject. */
+        $mail->Subject = $_POST['subject'];
+
+        /* Set the mail message body. */
+        $mail->Body = $_POST['message'];
+
+        /* Finally send the mail. */
+        if (!$mail->send())
+        {
+            /* PHPMailer error. */
+            echo $mail->ErrorInfo;
         }
     }
 }

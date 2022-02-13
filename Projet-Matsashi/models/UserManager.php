@@ -52,6 +52,7 @@ class UserManager extends Model{
     }
     public function disconnectUser(){
         unset($_COOKIE["pseudo"]);
+        unset($_SESSION["pseudo"]);
         setcookie('pseudo',"",time()-3600);
     }
 }

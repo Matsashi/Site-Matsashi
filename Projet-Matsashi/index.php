@@ -1,10 +1,8 @@
 <?php
+session_start();
 ob_start();
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "
 https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-require 'vendor/autoload.php';
 include "controllers/GameController.controller.php";
 include "controllers/GlobalController.controller.php";
 include "controllers/SupportController.controller.php";
@@ -70,12 +68,11 @@ try{
             
             case "admin":
                 if(isset($url[1])){
-                    if(!empty($_COOKIE["pseudo"])){
+                    if(!empty($_SESSION["pseudo"])){
                         if(isset($url[2])){
                             if($url[1]=="deleteSupport"){
                                 $supportController->deleteSupport($url[2]);
-                                header ('location:' . URL);
-                                // A VÉRIFIER !
+                                header ('location: https://matsashi.fr/admin/update-support');
                                 break;
                             }else if($url[1]=="update-support"){
                             $supportName = $supportController->supportByID($url[2]);
@@ -110,7 +107,7 @@ try{
                                 break;
                             }else if($url[1] == "disconnect"){
                                 $globalController->disconnectUsers();
-                                header('location: admin');
+                                header('location: https://matsashi.fr/admin');
                                 break;
                             }else if($url[1] == "validate"){
                                 $globalController->addImageGame($_FILES);
@@ -132,13 +129,11 @@ try{
                                     $globalController->updateImage($_FILES, $pictureConsoleName);
                                 }
                                 $supportController->updateSupport($_POST["name"], $_FILES, $_POST["text"], $_POST["id"]);
-                                header('location: update-support');
-                                // A VÉRIFIER !;
+                                header('location: https://matsashi.fr/admin/update-support');
                                 break;
                             }else if($url[1]=="deleteGame"){
                                 $gameController->deleteGame($url[2]);
-                                header ('location: update-game');
-                                // A VÉRIFIER !
+                                header ('location: https://matsashi.fr/admin/update-game');
                                 break;
                             }
                         }
@@ -146,7 +141,7 @@ try{
                         if(!empty($_POST['login']) && !empty($_POST['password'])){
                             $message = $globalController->connexionUsers($_POST['login'], $_POST['password']);
                             if($message == "OK"){
-                                header('location: panel');
+                                header('location: https://matsashi.fr/admin/panel');
                                 break;
                             }else{
                                 require "views/admin.view.php";
@@ -158,7 +153,7 @@ try{
                         }
                     }                    
                 }else{
-                    if(!empty($_COOKIE["pseudo"])){
+                    if(!empty($_SESSION["pseudo"])){
                         require "views/panel.view.php";
                         break;
                     }else{
@@ -169,59 +164,7 @@ try{
             case "contact":
                 if(isset($url[1])){
                     if($url[1] == "send"){
-
-                        $mailAdress = $_POST['mail'];
-                        /* Create a new PHPMailer object. */
-                        $mail = new PHPMailer();
-
-                        /* Charset */
-                        $mail->CharSet = 'UTF-8';
-
-                        /* Tells PHPMailer to use SMTP. */
-                        $mail->isSMTP();
-                        
-                        /* SMTP server address. */
-                        $mail->Host = 'mail49.lwspanel.com';
-
-                        /* Use SMTP authentication. */
-                        $mail->SMTPAuth = TRUE;
-                        
-                        /* Set the encryption system. */
-                        $mail->SMTPSecure = 'tls';
-                        
-                        /* SMTP authentication username. */
-                        $mail->Username = 'contact@matsashi.fr';
-                        
-                        /* SMTP authentication password. */
-                        $mail->Password = 'gD3*FB@wfHk2xfE';
-                        
-                        /* Set the SMTP port. */
-                        $mail->Port = 587;
-
-                        /* Debug */
-                        $mail->SMTPDebug = 0;
-
-                        /* Set the mail sender. */
-                        $mail->setFrom('contact@matsashi.fr', $mailAdress);
-
-                        /* L'adresse de réponse */
-                        $mail->addReplyTo($mailAdress);
-
-                        /* Add a recipient. */
-                        $mail->addAddress('contact@matsashi.fr', 'Matsashi');
-
-                        /* Set the subject. */
-                        $mail->Subject = $_POST['subject'];
-
-                        /* Set the mail message body. */
-                        $mail->Body = $_POST['message'];
-
-                        /* Finally send the mail. */
-                        if (!$mail->send())
-                        {
-                            /* PHPMailer error. */
-                            echo $mail->ErrorInfo;
-                        }
+                        $globalController->sendMail();
                         require "views/contact.view.php";
                         break;
                     }
